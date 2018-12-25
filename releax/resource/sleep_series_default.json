@@ -1,0 +1,67 @@
+{
+  "Featured Sleep Series": {
+    "show_nums": 5,
+    "order": 6,
+    "musics": [{
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/HealthySleepHabits.jpg",
+      "title": "Healthy Sleep Habits",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/healthy_sleep_habbits.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/HealthySleepHabits.png",
+      "type": "",
+      "id": 78,
+      "type_music": "course"
+    }, {
+      "product_id": "chargeable",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/M-BodyScanforSleep.jpg",
+      "title": "Body Scan for Sleep",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/Bodyscanforsleep.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/M-BodyScanforSleep.png",
+      "type": "",
+      "id": 83,
+      "type_music": "course"
+    }, {
+      "product_id": "chargeable",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/SkillstoHaveaBetterSleep.jpg",
+      "title": "Skills to have better sleep",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/Skillstohavebettersleep.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/SkillstoHaveaBetterSleep.png",
+      "type": "",
+      "id": 84,
+      "type_music": "course"
+    }, {
+      "product_id": "chargeable",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/GuidedRelaxationagainstInsomnia.jpg",
+      "title": "Guided Relaxation Against Insomnia",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/Guidedrelaxationagainstinsomnia.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/GuidedRelaxationagainstInsomnia.png",
+      "type": "",
+      "id": 85,
+      "type_music": "course"
+    }, {
+      "product_id": "chargeable",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/RelaxwithRhythmicBreathing.jpg",
+      "title": "Relax with Rythmic Breathing",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/Relaxwithrythmicbreathing.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/RelaxwithRhythmicBreathing.png",
+      "type": "",
+      "id": 86,
+      "type_music": "course"
+    }]
+  }
+}

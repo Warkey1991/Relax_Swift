@@ -1,0 +1,6 @@
+module Pods_releax {
+  umbrella header "Pods-releax-umbrella.h"
+
+  export *
+  module * { export * }
+}

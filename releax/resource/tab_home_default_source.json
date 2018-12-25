@@ -1,0 +1,139 @@
+{
+  "Featured Sleep Series": {
+    "show_nums": 5,
+    "order": 6,
+    "musics": [{
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/thundershower.jpg",
+      "title": "Thundershower",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/thundershower.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/thundershower.jpg",
+      "type": "",
+      "id": 31
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/nature_water_drops.jpg",
+      "title": "Nature Water Drops",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/nature_water_drops.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/nature_water_drops.jpg",
+      "type": "",
+      "id": 72
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/tranquil_nature.jpg",
+      "title": "Tranquil Nature",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/tranquil_nature.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/tranquil_nature.jpg",
+      "type": "",
+      "id": 73
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/tranquil_nature.jpg",
+      "title": "Soft Music",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/soft_music.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/soft_music.jpg",
+      "type": "",
+      "id": 70
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/rain_and_frogs.jpg",
+      "title": "Rain And Frogs",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/rain_and_frogs.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/rain_and_frogs.jpg",
+      "type": "",
+      "id": 28
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/finding_motivation.jpg",
+      "title": "Finding Motivation",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/finding_motivation.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/finding_motivation.jpg",
+      "type": "",
+      "id": 11
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/bamboo_flute.jpg",
+      "title": "Bamboo Flute",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/bamboo_flute.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/bamboo_flute.jpg",
+      "type": "",
+      "id": 6
+    }, {
+      "product_id": "",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/running_water.jpg",
+      "title": "Running Water",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/running_water.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/running_water.jpg",
+      "type": "",
+      "id": 29
+    }, {
+      "product_id": "whisper_to_you",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/whisper_to_you.jpg",
+      "title": "Whisper To You",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/whisper_to_you.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/whisper_to_you.jpg",
+      "type": "",
+      "id": 61
+    }, {
+      "product_id": "water_drop_sounds",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/water_sounds.jpg",
+      "title": "Water Sounds",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/water_sounds.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/water_sounds.jpg",
+      "type": "",
+      "id": 36
+    }, {
+      "product_id": "chakra_sound_therapy",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/chakra_sound_therapy.jpg",
+      "title": "Chakra Sound Therapy",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/chakra_sound_therapy.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/chakra_sound_therapy.jpg",
+      "type": "",
+      "id": 7
+    }, {
+      "product_id": "crisp_sound",
+      "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/crisp_sound.jpg",
+      "title": "Crisp Sound",
+      "background_url": "",
+      "video_url": "",
+      "descrip": "",
+      "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/crisp_sound.mp3",
+      "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/crisp_sound.jpg",
+      "type": "",
+      "id": 39
+    }]
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {"name":"da_vinci", "enabled":"true"},
+  {"name":"facebook", "enabled":"true"},
+  {"name":"admob", "enabled":"true"},
+  {"name":"mopub", "enabled":"true"},
+  {"name":"flurry", "enabled":"true", "api_key":"RWCDRTVCMVS4HRQH5PTM"},
+  {"name":"applovin", "enabled":"true"},
+  {"name":"sniper", "enabled":"true", "app_id":"d22ad2665217d43dc968047c07b4b0f1"},
+  {"name":"my_target", "enabled":"false"},
+  {"name":"vungle", "enabled":"false", "app_id":"","placement_list":[]},
+  {"name":"unity", "enabled":"false", "game_id":""},
+  {"name":"amazon", "enabled":"false", "app_id":""}
+]
+

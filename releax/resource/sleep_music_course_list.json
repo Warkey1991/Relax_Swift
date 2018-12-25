@@ -1,0 +1,99 @@
+{
+    "Deep Mindful Relaxation": {
+    "show_nums": 7,
+    "order": 1,
+    "musics": [
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/A-simple-relaxation-against-your-tiredness.jpg",
+        "title": "Simple Relaxation Against Your Tiredness",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/simple_relaxation_against_your_tiredness.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/simple_relaxation_against_your_tiredness.png",
+        "type": "",
+        "id": 92,
+        "type_music": "course"
+      },
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/nature_water_drops.jpg",
+        "title": "Nature Water Drops",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/nature_water_drops.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/nature_water_drops.jpg",
+        "type": "",
+        "id": 72,
+        "type_music": "course"
+      },
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/Breath-and-release-yourself.jpg",
+        "title": "Breath and Release Yourself",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/breath_and_release_yourself.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/Breath_and_release_yourself.png",
+        "type": "",
+        "id": 85,
+        "type_music": "course"
+      },
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/rain_and_frogs.jpg",
+        "title": "Rain And Frogs",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/rain_and_frogs.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/rain_and_frogs.jpg",
+        "type": "",
+        "id": 28,
+        "type_music": "course"
+      },
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/Meditation-for-Working-with-Difficulties-Meditation-for-Working-with-Difficulties.jpg",
+        "title": "Sense the Difficulties and Overcome It",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/sense_the_difficulties_and_relieve_it.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/Breath_and_release_yourself.png",
+        "type": "",
+        "id": 95,
+        "type_music": "course"
+      },
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/finding_motivation.jpg",
+        "title": "Finding Motivation",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/music/finding_motivation.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/thumb_image/finding_motivation.jpg",
+        "type": "",
+        "id": 11,
+        "type_music": "course"
+      },
+      {
+        "product_id": "",
+        "banner_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/Feel-calm-before-bed-Part-1.jpg",
+        "title": "Feel Calm before Bed (Part 1)",
+        "background_url": "",
+        "video_url": "",
+        "descrip": "",
+        "music_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/course/feel_calm_before_bed_part_1.mp3",
+        "thumb_url": "http://ime.cdn.cootekservice.com/default/SleepMusic/res/default/image/Feel_calm_before_bed_Part_1.png",
+        "type": "",
+        "id": 87,
+        "type_music": "course"
+      }
+    ]
+  }
+}
