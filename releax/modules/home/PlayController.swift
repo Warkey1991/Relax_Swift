@@ -11,7 +11,8 @@ import AVFoundation
 import Kingfisher
 import MediaPlayer
 
-class PlayController: UIViewController, MusicDownLoadProtocol {
+class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDelegate {
+    
     var itemLabel = UILabel()
     var timeLabel = UILabel()
     var playButton: UIButton!
@@ -22,7 +23,8 @@ class PlayController: UIViewController, MusicDownLoadProtocol {
     var imageBg:UIImageView!
     var musicItems: [MusicItem]?
     let audioPlayer = STKAudioPlayer()
-    //var avPlayer:AVPlayer!
+    var timer: Timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +37,10 @@ class PlayController: UIViewController, MusicDownLoadProtocol {
         initContentView()
         addButtons()
         
+        
+        
         initData()
+        audioPlayer.delegate = self
     }
     
     private func initData() {
@@ -55,26 +60,12 @@ class PlayController: UIViewController, MusicDownLoadProtocol {
                 let ducumentPath = NSHomeDirectory() + "/Documents"
                 var mp3Url = URL(fileURLWithPath: ducumentPath)
                 mp3Url.appendPathComponent(downLoadUrl.lastPathComponent)
-                audioPlayer.play(mp3Url)
-                let seconds = audioDuration(mp3Url)
-                let (minute, second) = secondsConvertMinuteAndSeconds(seconds: Int(seconds))
-                timeLabel.text = timeConvertString(minute: minute, second: second)
-                playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
+               audioPlayer.play(mp3Url)
             }
        }
     }
     
-    func audioDuration(_ audioFileURL: URL) -> Float64 {
-        let audioAsset = AVURLAsset(url: audioFileURL, options: nil)
-        let audioDuration = audioAsset.duration
-        let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
-        return audioDurationSeconds
-    }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        audioPlayer.stop()
-        audioPlayer.clearQueue()
-    }
     private func initNavigation() {
         //设置title 颜色
         self.navigationItem.title = "\(index)/\(count)"
@@ -192,6 +183,12 @@ class PlayController: UIViewController, MusicDownLoadProtocol {
         self.navigationController?.navigationBar.shadowImage = nil
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        audioPlayer.stop()
+        audioPlayer.clearQueue()
+        timer.invalidate()
+    }
+    
     func progress(pogress pogressDouble: Double) {
         let result = pogressDouble * 100
         DispatchQueue.main.async {
@@ -201,10 +198,6 @@ class PlayController: UIViewController, MusicDownLoadProtocol {
     
     func downLoaded(saveUrl: URL) {
         audioPlayer.play(saveUrl)
-        let seconds = audioDuration(saveUrl)
-        let (minute, second) = secondsConvertMinuteAndSeconds(seconds: Int(seconds))
-        timeLabel.text = timeConvertString(minute: minute, second: second)
-        playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
     
     func secondsConvertMinuteAndSeconds(seconds: Int) -> (minute: Int, second: Int) {
@@ -229,5 +222,39 @@ class PlayController: UIViewController, MusicDownLoadProtocol {
         showTime.append(String(second))
         
         return showTime
+    }
+    
+    
+    @objc func updateProgress() {
+        let playProgress = Int(audioPlayer.progress)
+        let duration = Int(audioPlayer.duration)
+        showPlayTime(duration - playProgress)
+    }
+    
+    func showPlayTime(_ hasSecond: Int) {
+        let (minute, second) = secondsConvertMinuteAndSeconds(seconds: hasSecond)
+        timeLabel.text = timeConvertString(minute: minute, second: second)
+    }
+    
+    func audioPlayer(_ audioPlayer: STKAudioPlayer, didStartPlayingQueueItemId queueItemId: NSObject) {
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        let seconds = audioPlayer.duration
+        showPlayTime(Int(seconds))
+        playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
+    func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishBufferingSourceWithQueueItemId queueItemId: NSObject) {
+        
+    }
+    
+    func audioPlayer(_ audioPlayer: STKAudioPlayer, stateChanged state: STKAudioPlayerState, previousState: STKAudioPlayerState) {
+        
+    }
+    
+    func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishPlayingQueueItemId queueItemId: NSObject, with stopReason: STKAudioPlayerStopReason, andProgress progress: Double, andDuration duration: Double) {
+    }
+    
+    func audioPlayer(_ audioPlayer: STKAudioPlayer, unexpectedError errorCode: STKAudioPlayerErrorCode) {
+        
     }
 }
