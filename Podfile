@@ -5,5 +5,6 @@ target 'releax' do
        pod 'SnapKit', '~> 4.0.0'
        pod 'HandyJSON', '~> 4.2.0'
        pod 'Kingfisher'
+       pod 'StreamingKit'
 end
 

@@ -37,7 +37,10 @@
 		19419E3521D0F9E200452A4E /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19419E3421D0F9E200452A4E /* CollectionReusableView.swift */; };
 		1948040721D0F4C300A3D6D4 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948040521D0F4C300A3D6D4 /* MusicCollectionViewCell.swift */; };
 		1948040821D0F4C300A3D6D4 /* MusicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1948040621D0F4C300A3D6D4 /* MusicCollectionViewCell.xib */; };
-		196C088121D222760066659E /* MoveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196C088021D222760066659E /* MoveImageView.swift */; };
+		1967BC2921D4B38800E0199C /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC2721D4B38800E0199C /* HttpTools.swift */; };
+		1967BC2A21D4B38800E0199C /* bird.mp3.xcappdata in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC2821D4B38800E0199C /* bird.mp3.xcappdata */; };
+		1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */; };
+		1967BC3421D4B3ED00E0199C /* JsonConvertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */; };
 		B9E6500946DBB11C84F80199 /* libPods-releax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF100C001A035B5AD75C59 /* libPods-releax.a */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +98,11 @@
 		19419E3421D0F9E200452A4E /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		1948040521D0F4C300A3D6D4 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 		1948040621D0F4C300A3D6D4 /* MusicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCollectionViewCell.xib; sourceTree = "<group>"; };
-		196C088021D222760066659E /* MoveImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveImageView.swift; sourceTree = "<group>"; };
+		1967BC2721D4B38800E0199C /* HttpTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
+		1967BC2821D4B38800E0199C /* bird.mp3.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = bird.mp3.xcappdata; sourceTree = "<group>"; };
+		1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDownLoadProtocol.swift; sourceTree = "<group>"; };
+		1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConvertModel.swift; sourceTree = "<group>"; };
+		1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "releax-Bridging-Header.h"; sourceTree = "<group>"; };
 		196C088221D2265A0066659E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.release.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.release.xcconfig"; sourceTree = "<group>"; };
 		5EDF100C001A035B5AD75C59 /* libPods-releax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-releax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,11 +169,13 @@
 		1937EE8721CB45740061772E /* releax */ = {
 			isa = PBXGroup;
 			children = (
+				1967BC2621D4B38800E0199C /* nettools */,
 				1937EED821D0CA480061772E /* resource */,
 				1937EEC521CB78260061772E /* views */,
 				1937EEBB21CB48780061772E /* modules */,
 				1937EEB821CB48110061772E /* base */,
 				1937EE8821CB45740061772E /* AppDelegate.swift */,
+				1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */,
 				1937EE8E21CB45740061772E /* Main.storyboard */,
 				1937EECE21CCD2F50061772E /* LaunchController.swift */,
 				1937EE9121CB45750061772E /* Assets.xcassets */,
@@ -215,6 +224,7 @@
 		1937EEBC21CB487E0061772E /* home */ = {
 			isa = PBXGroup;
 			children = (
+				1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */,
 				19C025CF21D0EA7700004883 /* view */,
 				1937EEE521D0CD4F0061772E /* model */,
 				1937EEBF21CB48D00061772E /* HomeController.swift */,
@@ -249,7 +259,6 @@
 				1937EED221CCFBD30061772E /* LineView.swift */,
 				1937EED421CCFE6E0061772E /* SettingItemView.swift */,
 				1937EED621D091240061772E /* SettingPremiumView.swift */,
-				196C088021D222760066659E /* MoveImageView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -277,9 +286,19 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		1967BC2621D4B38800E0199C /* nettools */ = {
+			isa = PBXGroup;
+			children = (
+				1967BC2721D4B38800E0199C /* HttpTools.swift */,
+				1967BC2821D4B38800E0199C /* bird.mp3.xcappdata */,
+			);
+			path = nettools;
+			sourceTree = "<group>";
+		};
 		19C025CF21D0EA7700004883 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */,
 				1948040521D0F4C300A3D6D4 /* MusicCollectionViewCell.swift */,
 				1948040621D0F4C300A3D6D4 /* MusicCollectionViewCell.xib */,
 				19419E3421D0F9E200452A4E /* CollectionReusableView.swift */,
@@ -364,6 +383,7 @@
 				TargetAttributes = {
 					1937EE8421CB45740061772E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					1937EE9A21CB45750061772E = {
 						CreatedOnToolsVersion = 10.1;
@@ -402,6 +422,7 @@
 			files = (
 				1937EEE321D0CB340061772E /* sleep_music_course_list.json in Resources */,
 				1937EEE221D0CB340061772E /* tab_home_default_source.json in Resources */,
+				1967BC2A21D4B38800E0199C /* bird.mp3.xcappdata in Resources */,
 				1937EE9521CB45750061772E /* LaunchScreen.storyboard in Resources */,
 				1937EE9221CB45750061772E /* Assets.xcassets in Resources */,
 				1937EEE121D0CB340061772E /* sleep_music_wake_up.json in Resources */,
@@ -460,12 +481,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1937EED521CCFE6E0061772E /* SettingItemView.swift in Sources */,
+				1967BC3421D4B3ED00E0199C /* JsonConvertModel.swift in Sources */,
 				1937EEC221CB48DC0061772E /* SettingController.swift in Sources */,
+				1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */,
 				1937EEE721D0CDCA0061772E /* Music.swift in Sources */,
 				1948040721D0F4C300A3D6D4 /* MusicCollectionViewCell.swift in Sources */,
 				1937EEC921CB9F930061772E /* ItemUnitView.swift in Sources */,
 				1937EED721D091240061772E /* SettingPremiumView.swift in Sources */,
 				1937EED121CCDC730061772E /* CircleProgressView.swift in Sources */,
+				1967BC2921D4B38800E0199C /* HttpTools.swift in Sources */,
 				1937EEBA21CB48240061772E /* RootTabBarController.swift in Sources */,
 				1937EE8921CB45740061772E /* AppDelegate.swift in Sources */,
 				19419E3521D0F9E200452A4E /* CollectionReusableView.swift in Sources */,
@@ -473,7 +497,6 @@
 				1937EEC721CB78980061772E /* FunctionController.swift in Sources */,
 				1937EEE921D0CDEB0061772E /* MusicItem.swift in Sources */,
 				1937EECF21CCD2F50061772E /* LaunchController.swift in Sources */,
-				196C088121D222760066659E /* MoveImageView.swift in Sources */,
 				1937EED321CCFBD30061772E /* LineView.swift in Sources */,
 				1937EEC421CB48F10061772E /* SitDownController.swift in Sources */,
 				1937EECD21CC9BEB0061772E /* PlayController.swift in Sources */,
@@ -653,6 +676,7 @@
 			baseConfigurationReference = C1E07D38FD41E21AF9471FDE /* Pods-releax.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BC63VCC68;
 				INFOPLIST_FILE = releax/Info.plist;
@@ -662,6 +686,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.dotc.releax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "releax/releax-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -672,6 +698,7 @@
 			baseConfigurationReference = 30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5BC63VCC68;
 				INFOPLIST_FILE = releax/Info.plist;
@@ -681,6 +708,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.dotc.releax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "releax/releax-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
