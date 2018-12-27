@@ -20,6 +20,7 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     var layout = UICollectionViewFlowLayout()
     var musicData = Array<[String: Music]>()
     var tableView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -215,32 +216,9 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     }
 
     func initDatas() {
-        musicData.append([String: Music]())
-        let sounds = jsonParser(fileName: "sleep_music_course_list.json")
-        musicData.append(sounds)
-        let natural = jsonParser(fileName: "sleep_music_natural.json")
-        musicData.append(natural)
-        let wakeUp = jsonParser(fileName: "sleep_music_wake_up.json")
-        musicData.append(wakeUp)
-        let series = jsonParser(fileName: "sleep_series_default.json")
-        musicData.append(series)
-        let tableHome = jsonParser(fileName: "tab_home_default_source.json")
-        musicData.append(tableHome)
+        let jsonMusicDict = JsonConvertModel.jsonConvertMusic("sleep_music_course_list.json", "sleep_music_natural.json","sleep_music_wake_up.json","sleep_series_default.json","tab_home_default_source.json")
+        musicData.insert([String:Music](), at: 0)
+        musicData.insert(contentsOf: jsonMusicDict, at: 1)
         tableView.reloadData()
     }
-
-    func jsonParser(fileName: String)-> [String: Music] {
-        print("JSON", "jsonParser")
-        guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: nil) else {
-            fatalError("JSON File Fetch Failed")
-        }
-        let data = try? Data.init(contentsOf: fileURL)
-        let decoder = JSONDecoder()
-        guard let music = try? decoder.decode([String: Music].self, from: data!) else {
-            fatalError("JSON Decode Failed")
-        }
-        
-        return music
-    }
-    
 }

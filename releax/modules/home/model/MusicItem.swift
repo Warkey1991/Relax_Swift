@@ -18,4 +18,7 @@ class MusicItem: Decodable{
     var thumb_url: String?
     var type: String?
     var id: Int?
+    
 }
+
+

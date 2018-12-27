@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//协议类似于java中的接口回调
 protocol SelectorProtocol {
     func onClickResponse(index: Int)
 }

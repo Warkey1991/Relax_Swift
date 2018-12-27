@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
 import Kingfisher
+import MediaPlayer
 
-class PlayController: UIViewController {
+class PlayController: UIViewController, MusicDownLoadProtocol {
+    var itemLabel = UILabel()
+    var timeLabel = UILabel()
+    var playButton: UIButton!
     var index: Int = 0
     var count: Int = 0
     var progressView: CircleProgressView?
     var pause: Bool = false
     var imageBg:UIImageView!
     var musicItems: [MusicItem]?
-    
+    let audioPlayer = STKAudioPlayer()
+    //var avPlayer:AVPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,14 +43,38 @@ class PlayController: UIViewController {
             guard let music = musicItems?[index - 1] else {
                 fatalError("music nil")
             }
-            
+            itemLabel.text = music.title
             if let url = URL(string: music.banner_url!) {
                 imageBg.kf.setImage(with: url)
-//                imageBg.kf.setImage(with: url, placeholder: UIImage(named: "play_bg"), options: nil, progressBlock: nil, completionHandler: nil)
+            }
+            
+            let downLoadUrl = URL(fileURLWithPath: music.music_url ?? "" )
+            if !HttpTools.fileExist(fileName: downLoadUrl.lastPathComponent) {
+                HttpTools.downloadMp3(musicUrl: music.music_url ?? "", downLoadProtocol: self)
+            } else {
+                let ducumentPath = NSHomeDirectory() + "/Documents"
+                var mp3Url = URL(fileURLWithPath: ducumentPath)
+                mp3Url.appendPathComponent(downLoadUrl.lastPathComponent)
+                audioPlayer.play(mp3Url)
+                let seconds = audioDuration(mp3Url)
+                let (minute, second) = secondsConvertMinuteAndSeconds(seconds: Int(seconds))
+                timeLabel.text = timeConvertString(minute: minute, second: second)
+                playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
             }
        }
     }
     
+    func audioDuration(_ audioFileURL: URL) -> Float64 {
+        let audioAsset = AVURLAsset(url: audioFileURL, options: nil)
+        let audioDuration = audioAsset.duration
+        let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
+        return audioDurationSeconds
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        audioPlayer.stop()
+        audioPlayer.clearQueue()
+    }
     private func initNavigation() {
         //设置title 颜色
         self.navigationItem.title = "\(index)/\(count)"
@@ -68,12 +98,8 @@ class PlayController: UIViewController {
             make.centerX.equalTo(self.view)
         }
         
-        let itemLabel = UILabel()
-        itemLabel.text = "Sleep"
         itemLabel.textColor = UIColor.white
         
-        let timeLabel = UILabel()
-        timeLabel.text = "04:08"
         timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 20)
         timeLabel.textColor = UIColor.white
         
@@ -98,7 +124,7 @@ class PlayController: UIViewController {
         timeButton.setImage(UIImage(named: "ic_premium_no_timer")?.withRenderingMode(.alwaysOriginal), for: .normal)
         timeButton.addTarget(self, action: #selector(setTimeClock), for: .touchUpInside)
         
-        let playButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        playButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         playButton.setImage(UIImage(named: "play_play_icon")?.withRenderingMode(.alwaysOriginal),for: .normal)
         playButton.addTarget(self, action: #selector(pauseOrResumeMusic(_:)), for: .touchUpInside)
         
@@ -125,6 +151,7 @@ class PlayController: UIViewController {
     @objc func filterAd() {
         
     }
+    
     @objc func backPressed() {
        self.dismiss(animated: true, completion: nil)
     }
@@ -136,9 +163,11 @@ class PlayController: UIViewController {
     @objc func pauseOrResumeMusic(_ sender: UIButton) {
         pause = !pause
         if pause {
-             sender.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        } else {
+            audioPlayer.pause()
             sender.setImage(UIImage(named: "play_play_icon")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else {
+            audioPlayer.resume()
+            sender.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
     }
     
@@ -161,5 +190,44 @@ class PlayController: UIViewController {
         //重置导航栏背景
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.shadowImage = nil
+    }
+    
+    func progress(pogress pogressDouble: Double) {
+        let result = pogressDouble * 100
+        DispatchQueue.main.async {
+            self.timeLabel.text = "DownLoading(\(Int(result))%)"
+        }
+    }
+    
+    func downLoaded(saveUrl: URL) {
+        audioPlayer.play(saveUrl)
+        let seconds = audioDuration(saveUrl)
+        let (minute, second) = secondsConvertMinuteAndSeconds(seconds: Int(seconds))
+        timeLabel.text = timeConvertString(minute: minute, second: second)
+        playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
+    func secondsConvertMinuteAndSeconds(seconds: Int) -> (minute: Int, second: Int) {
+        if seconds < 3600 {
+            let minute = seconds / 60
+            let second = seconds % 60
+            return (minute, second)
+        }
+        return (0, 0)
+    }
+    
+    func timeConvertString(minute: Int, second: Int)-> String {
+        var showTime = ""
+        if minute < 10 {
+            showTime.append("0")
+        }
+        showTime.append(String(minute))
+        showTime.append(":")
+        if second < 10 {
+            showTime.append("0")
+        }
+        showTime.append(String(second))
+        
+        return showTime
     }
 }
