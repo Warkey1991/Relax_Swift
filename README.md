@@ -1,12 +1,14 @@
 #  Swift 学习
-该APP目前实现了以下的功能，
+该APP目前实现了以下的功能，在线下载音频到本地，播放本地音频的功能
 <div align="left">
 <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/2.png" width="200" height="360">
 <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/3.png" width="200" height="360">    
 <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/4.png" width="200" height="360">  
 <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/5.png" width="200" height="360">    
 </div>
-
+ <br>
+ <br>
+ 
 - **通过项目学习语法，将变得更易理解和有趣**  包含了一下语法知识点，将继续补充
 1. **常量和变量**: var ---变量， let 常量， var 修饰的变量可以修改，let修饰的常量一经初始化就无法更改。
      ```Swift
