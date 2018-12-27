@@ -1,5 +1,5 @@
 #  Swift 学习
-该APP目前实现了以下的功能，在线下载音频到本地，播放本地音频的功能
+该APP目前实现了以下的功能，在线下载音频到本地，播放本地音频的功能,后续继续完善功能
 <div align="left">
 <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/2.png" width="200" height="360">
 <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/3.png" width="200" height="360">    
