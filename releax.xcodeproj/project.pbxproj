@@ -103,6 +103,7 @@
 		1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDownLoadProtocol.swift; sourceTree = "<group>"; };
 		1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConvertModel.swift; sourceTree = "<group>"; };
 		1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "releax-Bridging-Header.h"; sourceTree = "<group>"; };
+		1967BC3D21D4C01A00E0199C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		196C088221D2265A0066659E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.release.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.release.xcconfig"; sourceTree = "<group>"; };
 		5EDF100C001A035B5AD75C59 /* libPods-releax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-releax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +148,7 @@
 		1937EE7C21CB45740061772E = {
 			isa = PBXGroup;
 			children = (
+				1967BC3D21D4C01A00E0199C /* README.md */,
 				1937EE8721CB45740061772E /* releax */,
 				1937EE9E21CB45750061772E /* releaxTests */,
 				1937EEA921CB45750061772E /* releaxUITests */,
