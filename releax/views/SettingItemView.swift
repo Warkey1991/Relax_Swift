@@ -13,7 +13,6 @@ class SettingItemView: UIView {
     let textLabel = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("height:\(frame.height)")
         initView()
     }
     

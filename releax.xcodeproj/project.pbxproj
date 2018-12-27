@@ -38,9 +38,13 @@
 		1948040721D0F4C300A3D6D4 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948040521D0F4C300A3D6D4 /* MusicCollectionViewCell.swift */; };
 		1948040821D0F4C300A3D6D4 /* MusicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1948040621D0F4C300A3D6D4 /* MusicCollectionViewCell.xib */; };
 		1967BC2921D4B38800E0199C /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC2721D4B38800E0199C /* HttpTools.swift */; };
-		1967BC2A21D4B38800E0199C /* bird.mp3.xcappdata in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC2821D4B38800E0199C /* bird.mp3.xcappdata */; };
 		1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */; };
 		1967BC3421D4B3ED00E0199C /* JsonConvertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */; };
+		1967BC4D21D4CDFB00E0199C /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4821D4CDFA00E0199C /* 4.png */; };
+		1967BC4E21D4CDFB00E0199C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4921D4CDFA00E0199C /* 1.png */; };
+		1967BC4F21D4CDFB00E0199C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4A21D4CDFA00E0199C /* 5.png */; };
+		1967BC5021D4CDFB00E0199C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4B21D4CDFA00E0199C /* 2.png */; };
+		1967BC5121D4CDFB00E0199C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4C21D4CDFA00E0199C /* 3.png */; };
 		B9E6500946DBB11C84F80199 /* libPods-releax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF100C001A035B5AD75C59 /* libPods-releax.a */; };
 /* End PBXBuildFile section */
 
@@ -99,11 +103,15 @@
 		1948040521D0F4C300A3D6D4 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 		1948040621D0F4C300A3D6D4 /* MusicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCollectionViewCell.xib; sourceTree = "<group>"; };
 		1967BC2721D4B38800E0199C /* HttpTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
-		1967BC2821D4B38800E0199C /* bird.mp3.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = bird.mp3.xcappdata; sourceTree = "<group>"; };
 		1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDownLoadProtocol.swift; sourceTree = "<group>"; };
 		1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConvertModel.swift; sourceTree = "<group>"; };
 		1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "releax-Bridging-Header.h"; sourceTree = "<group>"; };
 		1967BC3D21D4C01A00E0199C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1967BC4821D4CDFA00E0199C /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		1967BC4921D4CDFA00E0199C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../../Desktop/1.png; sourceTree = "<group>"; };
+		1967BC4A21D4CDFA00E0199C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		1967BC4B21D4CDFA00E0199C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Desktop/2.png; sourceTree = "<group>"; };
+		1967BC4C21D4CDFA00E0199C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.release.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.release.xcconfig"; sourceTree = "<group>"; };
 		5EDF100C001A035B5AD75C59 /* libPods-releax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-releax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E07D38FD41E21AF9471FDE /* Pods-releax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.debug.xcconfig"; sourceTree = "<group>"; };
@@ -267,6 +275,11 @@
 		1937EED821D0CA480061772E /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				1967BC4921D4CDFA00E0199C /* 1.png */,
+				1967BC4B21D4CDFA00E0199C /* 2.png */,
+				1967BC4C21D4CDFA00E0199C /* 3.png */,
+				1967BC4821D4CDFA00E0199C /* 4.png */,
+				1967BC4A21D4CDFA00E0199C /* 5.png */,
 				1937EEDA21D0CB340061772E /* mobutils_mediation_init_config.json */,
 				1937EEDD21D0CB340061772E /* sleep_music_course_list.json */,
 				1937EED921D0CB340061772E /* sleep_music_natural.json */,
@@ -290,7 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				1967BC2721D4B38800E0199C /* HttpTools.swift */,
-				1967BC2821D4B38800E0199C /* bird.mp3.xcappdata */,
 			);
 			path = nettools;
 			sourceTree = "<group>";
@@ -420,16 +432,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1967BC5121D4CDFB00E0199C /* 3.png in Resources */,
+				1967BC4D21D4CDFB00E0199C /* 4.png in Resources */,
 				1937EEE321D0CB340061772E /* sleep_music_course_list.json in Resources */,
+				1967BC5021D4CDFB00E0199C /* 2.png in Resources */,
 				1937EEE221D0CB340061772E /* tab_home_default_source.json in Resources */,
-				1967BC2A21D4B38800E0199C /* bird.mp3.xcappdata in Resources */,
 				1937EE9521CB45750061772E /* LaunchScreen.storyboard in Resources */,
 				1937EE9221CB45750061772E /* Assets.xcassets in Resources */,
 				1937EEE121D0CB340061772E /* sleep_music_wake_up.json in Resources */,
 				1937EE9021CB45740061772E /* Main.storyboard in Resources */,
 				1937EEDF21D0CB340061772E /* sleep_music_natural.json in Resources */,
 				1937EEE021D0CB340061772E /* mobutils_mediation_init_config.json in Resources */,
+				1967BC4E21D4CDFB00E0199C /* 1.png in Resources */,
 				1948040821D0F4C300A3D6D4 /* MusicCollectionViewCell.xib in Resources */,
+				1967BC4F21D4CDFB00E0199C /* 5.png in Resources */,
 				1937EEE421D0CB340061772E /* sleep_series_default.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
