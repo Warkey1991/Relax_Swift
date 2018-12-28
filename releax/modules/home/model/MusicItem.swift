@@ -8,6 +8,7 @@
 
 import Foundation
 class MusicItem: Decodable{
+    var show_nums: Int
     var product_id: String?
     var banner_url: String?
     var title: String?
@@ -18,6 +19,8 @@ class MusicItem: Decodable{
     var thumb_url: String?
     var type: String?
     var id: Int?
+    var classes: String?
+    var order:Int?
     
 }
 

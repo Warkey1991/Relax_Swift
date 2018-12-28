@@ -45,6 +45,8 @@
 		1967BC4F21D4CDFB00E0199C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4A21D4CDFA00E0199C /* 5.png */; };
 		1967BC5021D4CDFB00E0199C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4B21D4CDFA00E0199C /* 2.png */; };
 		1967BC5121D4CDFB00E0199C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4C21D4CDFA00E0199C /* 3.png */; };
+		19EFFE3921D4EB770065539A /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EFFE3721D4EB770065539A /* sample.json */; };
+		19EFFE3A21D4EB770065539A /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EFFE3821D4EB770065539A /* course.json */; };
 		B9E6500946DBB11C84F80199 /* libPods-releax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF100C001A035B5AD75C59 /* libPods-releax.a */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		1967BC4A21D4CDFA00E0199C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		1967BC4B21D4CDFA00E0199C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Desktop/2.png; sourceTree = "<group>"; };
 		1967BC4C21D4CDFA00E0199C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		19EFFE3721D4EB770065539A /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		19EFFE3821D4EB770065539A /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
 		30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.release.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.release.xcconfig"; sourceTree = "<group>"; };
 		5EDF100C001A035B5AD75C59 /* libPods-releax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-releax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E07D38FD41E21AF9471FDE /* Pods-releax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				1967BC4C21D4CDFA00E0199C /* 3.png */,
 				1967BC4821D4CDFA00E0199C /* 4.png */,
 				1967BC4A21D4CDFA00E0199C /* 5.png */,
+				19EFFE3821D4EB770065539A /* course.json */,
+				19EFFE3721D4EB770065539A /* sample.json */,
 				1937EEDA21D0CB340061772E /* mobutils_mediation_init_config.json */,
 				1937EEDD21D0CB340061772E /* sleep_music_course_list.json */,
 				1937EED921D0CB340061772E /* sleep_music_natural.json */,
@@ -433,10 +439,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1967BC5121D4CDFB00E0199C /* 3.png in Resources */,
+				19EFFE3A21D4EB770065539A /* course.json in Resources */,
 				1967BC4D21D4CDFB00E0199C /* 4.png in Resources */,
 				1937EEE321D0CB340061772E /* sleep_music_course_list.json in Resources */,
 				1967BC5021D4CDFB00E0199C /* 2.png in Resources */,
 				1937EEE221D0CB340061772E /* tab_home_default_source.json in Resources */,
+				19EFFE3921D4EB770065539A /* sample.json in Resources */,
 				1937EE9521CB45750061772E /* LaunchScreen.storyboard in Resources */,
 				1937EE9221CB45750061772E /* Assets.xcassets in Resources */,
 				1937EEE121D0CB340061772E /* sleep_music_wake_up.json in Resources */,

@@ -18,7 +18,7 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     var titleLabel: UILabel = UILabel()
     var functionView: FunctionController!
     var layout = UICollectionViewFlowLayout()
-    var musicData = Array<[String: Music]>()
+    var musicData = Array<[String: [MusicItem]]>()
     var tableView: UICollectionView!
     
     override func viewDidLoad() {
@@ -131,23 +131,27 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     }
     
     func onClickResponse(index: Int) {
+        let bannerItems = musicData[0]["banner"]
         let playController = PlayController()
         playController.index = index + 1
-        playController.count = 4
+        playController.count = bannerItems?.count ?? 0
+        playController.musicItems = bannerItems
         let nav = UINavigationController.init(rootViewController: playController)
         self.present(nav, animated: true, completion: nil)
     }
     
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return musicData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 0
+        }
         let music = musicData[section]
         var count = 0
         for (_,value) in music {
-            count = value.musics?.count ?? 0
+            count = value.count
         }
         return count
     }
@@ -155,15 +159,14 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "music_Cell", for: indexPath as IndexPath) as! MusicCollectionViewCell
         let music = musicData[indexPath.section]
-        var key: String=""
-        for (k, _) in music {
-            key = k
+        var musicItems = [MusicItem]()
+        for (_,value) in music {
+            musicItems.append(contentsOf: value)
             break
         }
-        let musicItems = music[key]?.musics
-        let item = musicItems?[indexPath.row]
-        
-        cell.initData(imageUrl: item?.thumb_url, name: item?.title)
+
+        let item = musicItems[indexPath.row]
+        cell.initData(imageUrl: item.thumb_url, name: item.title)
         return cell
     }
     
@@ -206,8 +209,8 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
         var count = 0
         var musicItems: [MusicItem]?
         for (_,value) in music {
-            count = value.show_nums ?? 0
-            musicItems = value.musics
+            count = value.count
+            musicItems = value
         }
         playController.count = count
         playController.musicItems = musicItems
@@ -216,9 +219,8 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     }
 
     func initDatas() {
-        let jsonMusicDict = JsonConvertModel.jsonConvertMusic("sleep_music_course_list.json", "sleep_music_natural.json","sleep_music_wake_up.json","sleep_series_default.json","tab_home_default_source.json")
-        musicData.insert([String:Music](), at: 0)
-        musicData.insert(contentsOf: jsonMusicDict, at: 1)
+        let jsonMusicDict = JsonConvertModel.jsonConvertMusic("sample.json")
+        musicData.insert(contentsOf: jsonMusicDict, at: 0)
         tableView.reloadData()
     }
 }

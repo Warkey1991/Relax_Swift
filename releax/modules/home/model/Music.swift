@@ -7,10 +7,5 @@
 //
 import Foundation
 class Music: Decodable {
-    var show_nums: Int?
-    var order: Int?
-    var musics: [MusicItem]?
-    
-    required init() {
-    }
+    var sleep_music_list:[MusicItem]?
 }

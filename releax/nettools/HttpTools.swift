@@ -23,7 +23,9 @@ class HttpTools {
             destinationUrl.appendPathComponent(request.url!.lastPathComponent)
             return destinationUrl
         }) { (urlResponse, filePath, error) in
-            downLoadProtocol.downLoaded(saveUrl: filePath!)
+            if let path = filePath {
+                downLoadProtocol.downLoaded(saveUrl: path)
+            }
         }
         
         downloadTask.resume()
