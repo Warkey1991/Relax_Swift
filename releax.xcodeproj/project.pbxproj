@@ -45,6 +45,13 @@
 		1967BC4F21D4CDFB00E0199C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4A21D4CDFA00E0199C /* 5.png */; };
 		1967BC5021D4CDFB00E0199C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4B21D4CDFA00E0199C /* 2.png */; };
 		1967BC5121D4CDFB00E0199C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4C21D4CDFA00E0199C /* 3.png */; };
+		19DFFB7821D609BA001BDEBD /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7721D609BA001BDEBD /* CourseItem.swift */; };
+		19DFFB7A21D60BBD001BDEBD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7921D60BBD001BDEBD /* Course.swift */; };
+		19DFFB7C21D60C33001BDEBD /* CourseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7B21D60C33001BDEBD /* CourseResult.swift */; };
+		19DFFB7E21D60C99001BDEBD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7D21D60C99001BDEBD /* Result.swift */; };
+		19DFFB8021D60D29001BDEBD /* JsonConvertCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7F21D60D29001BDEBD /* JsonConvertCourseModel.swift */; };
+		19DFFB8321D61408001BDEBD /* CourseReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB8221D61408001BDEBD /* CourseReusableView.swift */; };
+		19DFFB8521D6390A001BDEBD /* MoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB8421D6390A001BDEBD /* MoveView.swift */; };
 		19EFFE3921D4EB770065539A /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EFFE3721D4EB770065539A /* sample.json */; };
 		19EFFE3A21D4EB770065539A /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EFFE3821D4EB770065539A /* course.json */; };
 		B9E6500946DBB11C84F80199 /* libPods-releax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF100C001A035B5AD75C59 /* libPods-releax.a */; };
@@ -114,6 +121,13 @@
 		1967BC4A21D4CDFA00E0199C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		1967BC4B21D4CDFA00E0199C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Desktop/2.png; sourceTree = "<group>"; };
 		1967BC4C21D4CDFA00E0199C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		19DFFB7721D609BA001BDEBD /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
+		19DFFB7921D60BBD001BDEBD /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		19DFFB7B21D60C33001BDEBD /* CourseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResult.swift; sourceTree = "<group>"; };
+		19DFFB7D21D60C99001BDEBD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		19DFFB7F21D60D29001BDEBD /* JsonConvertCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvertCourseModel.swift; sourceTree = "<group>"; };
+		19DFFB8221D61408001BDEBD /* CourseReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReusableView.swift; sourceTree = "<group>"; };
+		19DFFB8421D6390A001BDEBD /* MoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveView.swift; sourceTree = "<group>"; };
 		19EFFE3721D4EB770065539A /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		19EFFE3821D4EB770065539A /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
 		30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.release.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.release.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +272,8 @@
 		1937EEBE21CB48A90061772E /* sit */ = {
 			isa = PBXGroup;
 			children = (
+				19DFFB8121D613CF001BDEBD /* view */,
+				19DFFB7621D6099C001BDEBD /* model */,
 				1937EEC321CB48F10061772E /* SitDownController.swift */,
 			);
 			path = sit;
@@ -272,6 +288,7 @@
 				1937EED221CCFBD30061772E /* LineView.swift */,
 				1937EED421CCFE6E0061772E /* SettingItemView.swift */,
 				1937EED621D091240061772E /* SettingPremiumView.swift */,
+				19DFFB8421D6390A001BDEBD /* MoveView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -299,6 +316,7 @@
 		1937EEE521D0CD4F0061772E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */,
 				1937EEE621D0CDCA0061772E /* Music.swift */,
 				1937EEE821D0CDEB0061772E /* MusicItem.swift */,
 			);
@@ -316,10 +334,29 @@
 		19C025CF21D0EA7700004883 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */,
 				1948040521D0F4C300A3D6D4 /* MusicCollectionViewCell.swift */,
 				1948040621D0F4C300A3D6D4 /* MusicCollectionViewCell.xib */,
 				19419E3421D0F9E200452A4E /* CollectionReusableView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		19DFFB7621D6099C001BDEBD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				19DFFB7721D609BA001BDEBD /* CourseItem.swift */,
+				19DFFB7921D60BBD001BDEBD /* Course.swift */,
+				19DFFB7B21D60C33001BDEBD /* CourseResult.swift */,
+				19DFFB7D21D60C99001BDEBD /* Result.swift */,
+				19DFFB7F21D60D29001BDEBD /* JsonConvertCourseModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		19DFFB8121D613CF001BDEBD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				19DFFB8221D61408001BDEBD /* CourseReusableView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -507,9 +544,11 @@
 				1937EED521CCFE6E0061772E /* SettingItemView.swift in Sources */,
 				1967BC3421D4B3ED00E0199C /* JsonConvertModel.swift in Sources */,
 				1937EEC221CB48DC0061772E /* SettingController.swift in Sources */,
+				19DFFB8521D6390A001BDEBD /* MoveView.swift in Sources */,
 				1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */,
 				1937EEE721D0CDCA0061772E /* Music.swift in Sources */,
 				1948040721D0F4C300A3D6D4 /* MusicCollectionViewCell.swift in Sources */,
+				19DFFB7E21D60C99001BDEBD /* Result.swift in Sources */,
 				1937EEC921CB9F930061772E /* ItemUnitView.swift in Sources */,
 				1937EED721D091240061772E /* SettingPremiumView.swift in Sources */,
 				1937EED121CCDC730061772E /* CircleProgressView.swift in Sources */,
@@ -517,14 +556,19 @@
 				1937EEBA21CB48240061772E /* RootTabBarController.swift in Sources */,
 				1937EE8921CB45740061772E /* AppDelegate.swift in Sources */,
 				19419E3521D0F9E200452A4E /* CollectionReusableView.swift in Sources */,
+				19DFFB8021D60D29001BDEBD /* JsonConvertCourseModel.swift in Sources */,
 				1937EECB21CC8A3D0061772E /* SelectorProtocol.swift in Sources */,
 				1937EEC721CB78980061772E /* FunctionController.swift in Sources */,
 				1937EEE921D0CDEB0061772E /* MusicItem.swift in Sources */,
 				1937EECF21CCD2F50061772E /* LaunchController.swift in Sources */,
 				1937EED321CCFBD30061772E /* LineView.swift in Sources */,
+				19DFFB8321D61408001BDEBD /* CourseReusableView.swift in Sources */,
 				1937EEC421CB48F10061772E /* SitDownController.swift in Sources */,
 				1937EECD21CC9BEB0061772E /* PlayController.swift in Sources */,
 				1937EEC021CB48D00061772E /* HomeController.swift in Sources */,
+				19DFFB7C21D60C33001BDEBD /* CourseResult.swift in Sources */,
+				19DFFB7821D609BA001BDEBD /* CourseItem.swift in Sources */,
+				19DFFB7A21D60BBD001BDEBD /* Course.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

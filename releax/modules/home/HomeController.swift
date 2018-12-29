@@ -39,9 +39,10 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
     func initViews() {
         let cellWidth = (self.view.frame.width) / 3
         let layout = UICollectionViewFlowLayout.init()
-        layout.itemSize = CGSize.init(width: cellWidth, height: 140)
-        layout.minimumLineSpacing = 16
+        layout.itemSize = CGSize.init(width: cellWidth, height: 150)
+        layout.minimumLineSpacing = 4
         layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .vertical
         tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         tableView.delegate = self
         tableView.dataSource = self

@@ -24,6 +24,7 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     var musicItems: [MusicItem]?
     let audioPlayer = STKAudioPlayer()
     var timer: Timer = Timer()
+    var canPlay: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,12 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
         imageBg.contentMode = .scaleAspectFill
         view.addSubview(imageBg)
         
+        let viewBG = UIView(frame: self.view.bounds)
+        viewBG.backgroundColor = UIColor.init(displayP3Red: 0, green: 0, blue: 0, alpha: 0.4)
+        view.addSubview(viewBG)
         initNavigation()
         initContentView()
         addButtons()
-        
-        
         
         initData()
         audioPlayer.delegate = self
@@ -50,7 +52,13 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
             }
             itemLabel.text = music.title
             if let url = URL(string: music.banner_url!) {
-                imageBg.kf.setImage(with: url)
+                imageBg.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil, completionHandler: {(image, error, cacheType, imageUrl) in
+                    let moveView = MoveView(frame: self.view.bounds)
+                    self.view.insertSubview(moveView, at: 1)
+                    moveView.image = image
+                    moveView.initView()
+                    moveView.doAnimation()
+                })
             }
             
             let downLoadUrl = URL(fileURLWithPath: music.music_url ?? "" )
@@ -60,7 +68,7 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
                 let ducumentPath = NSHomeDirectory() + "/Documents"
                 var mp3Url = URL(fileURLWithPath: ducumentPath)
                 mp3Url.appendPathComponent(downLoadUrl.lastPathComponent)
-               audioPlayer.play(mp3Url)
+                audioPlayer.play(mp3Url)
             }
        }
     }
@@ -181,6 +189,8 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
         //重置导航栏背景
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.shadowImage = nil
+        
+        canPlay = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -197,7 +207,9 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     }
     
     func downLoaded(saveUrl: URL) {
-        audioPlayer.play(saveUrl)
+        if canPlay {
+            audioPlayer.play(saveUrl)
+        }
     }
     
     func secondsConvertMinuteAndSeconds(seconds: Int) -> (minute: Int, second: Int) {
@@ -229,6 +241,7 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
         let playProgress = Int(audioPlayer.progress)
         let duration = Int(audioPlayer.duration)
         showPlayTime(duration - playProgress)
+        progressView?.drawAngle(progress: audioPlayer.progress / audioPlayer.duration)
     }
     
     func showPlayTime(_ hasSecond: Int) {
@@ -248,10 +261,11 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     }
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, stateChanged state: STKAudioPlayerState, previousState: STKAudioPlayerState) {
-        
     }
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishPlayingQueueItemId queueItemId: NSObject, with stopReason: STKAudioPlayerStopReason, andProgress progress: Double, andDuration duration: Double) {
+        timer.invalidate()
+        progressView?.drawAngle(progress: 1)
     }
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, unexpectedError errorCode: STKAudioPlayerErrorCode) {

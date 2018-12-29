@@ -18,6 +18,10 @@ class MusicCollectionViewCell: UICollectionViewCell {
         
         imagePic.layer.cornerRadius = 8
         imagePic.layer.masksToBounds = true
+        
+        nameLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        nameLabel.numberOfLines = 0
+        nameLabel.sizeToFit()
     }
     
     func initData(imageUrl: String?, name: String?) {
