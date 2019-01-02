@@ -113,8 +113,8 @@ class SitDownController: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let playController = PlayController()
-        playController.index = indexPath.row + 1
+        let playController = CoursePlayControllerViewController()
+        playController.courseItem = courses?[indexPath.section].resources?[indexPath.row]
         let nav = UINavigationController.init(rootViewController: playController)
         self.present(nav, animated: true, completion: nil)
     }
