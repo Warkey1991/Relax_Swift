@@ -222,7 +222,7 @@
             }
         }
         ```
-        7. **使用UICollectionView 添加不同的header**
+    7. **使用UICollectionView 添加不同的header**
               **a.** 创建UICollectionView
               ```Swift
               tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
@@ -233,9 +233,9 @@
               // 注册一个headView，此段代码是设置header的关键部分
               tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
             ```
-              **b.** 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
-            ```Swift
-               
+            **b.** 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
+            
+           ```Swift
                //返回分区的数目。此案例中是6个
                func numberOfSections(in collectionView: UICollectionView) -> Int {
                     return musicData.count
@@ -317,10 +317,9 @@
                    self.present(nav, animated: true, completion: nil)
                }
                ```
-            **c.** 获取数据后重新加载到UICollectionView
-            ```Swift
-             tableView.reloadData()
-            ```
-            
+         **c.** 获取数据后重新加载到UICollectionView
+           ```Swift
+            tableView.reloadData()
+           ```
          
 
