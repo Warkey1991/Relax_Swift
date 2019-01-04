@@ -64,12 +64,18 @@ class SettingController: UIViewController {
             make.width.equalToSuperview()
         }
         
+        
         let premiumView = SettingPremiumView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
         contentView.addArrangedSubview(premiumView)
         premiumView.snp.makeConstraints{make->Void in
             make.height.equalTo(100)
             make.width.equalToSuperview()
         }
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showVipALertView))
+        premiumView.isUserInteractionEnabled = true
+        premiumView.addGestureRecognizer(gestureRecognizer)
+       
+        
         //单个条目
         for i in 0..<labels.count {
             let itemView = SettingItemView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
@@ -80,8 +86,17 @@ class SettingController: UIViewController {
                 make.width.equalToSuperview()
            }
         }
+       
         let contentHeight = CGFloat(80 * labels.count + 160)
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: contentHeight)
     }
+    
+    @objc func showVipALertView() {
+        let premiumViewController = PremiumViewController()
+        premiumViewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.present(premiumViewController, animated: true, completion: nil)
+    }
+    
+  
 }
 

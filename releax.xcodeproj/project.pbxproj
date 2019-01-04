@@ -41,10 +41,14 @@
 		1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */; };
 		1967BC3421D4B3ED00E0199C /* JsonConvertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */; };
 		1967BC4D21D4CDFB00E0199C /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4821D4CDFA00E0199C /* 4.png */; };
-		1967BC4E21D4CDFB00E0199C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4921D4CDFA00E0199C /* 1.png */; };
 		1967BC4F21D4CDFB00E0199C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4A21D4CDFA00E0199C /* 5.png */; };
-		1967BC5021D4CDFB00E0199C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4B21D4CDFA00E0199C /* 2.png */; };
 		1967BC5121D4CDFB00E0199C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4C21D4CDFA00E0199C /* 3.png */; };
+		1989E26E21DC90CE005E8256 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1989E26C21DC90CE005E8256 /* 1.png */; };
+		1989E26F21DC90CE005E8256 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1989E26D21DC90CE005E8256 /* 2.png */; };
+		1989E27221DE0F2D005E8256 /* VipAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27121DE0F2D005E8256 /* VipAlertView.swift */; };
+		1989E27621DE2CAB005E8256 /* UIAlertController+Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27521DE2CAB005E8256 /* UIAlertController+Dialog.swift */; };
+		1989E27A21DF15E1005E8256 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27921DF15E1005E8256 /* PremiumViewController.swift */; };
+		1989E27C21DF1666005E8256 /* VipAlertOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27B21DF1666005E8256 /* VipAlertOperationProtocol.swift */; };
 		19DFFB7821D609BA001BDEBD /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7721D609BA001BDEBD /* CourseItem.swift */; };
 		19DFFB7A21D60BBD001BDEBD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7921D60BBD001BDEBD /* Course.swift */; };
 		19DFFB7C21D60C33001BDEBD /* CourseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7B21D60C33001BDEBD /* CourseResult.swift */; };
@@ -52,6 +56,7 @@
 		19DFFB8021D60D29001BDEBD /* JsonConvertCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7F21D60D29001BDEBD /* JsonConvertCourseModel.swift */; };
 		19DFFB8321D61408001BDEBD /* CourseReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB8221D61408001BDEBD /* CourseReusableView.swift */; };
 		19DFFB8521D6390A001BDEBD /* MoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB8421D6390A001BDEBD /* MoveView.swift */; };
+		19DFFB8721D766B6001BDEBD /* CoursePlayControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB8621D766B6001BDEBD /* CoursePlayControllerViewController.swift */; };
 		19EFFE3921D4EB770065539A /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EFFE3721D4EB770065539A /* sample.json */; };
 		19EFFE3A21D4EB770065539A /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EFFE3821D4EB770065539A /* course.json */; };
 		B9E6500946DBB11C84F80199 /* libPods-releax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDF100C001A035B5AD75C59 /* libPods-releax.a */; };
@@ -117,10 +122,14 @@
 		1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "releax-Bridging-Header.h"; sourceTree = "<group>"; };
 		1967BC3D21D4C01A00E0199C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1967BC4821D4CDFA00E0199C /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		1967BC4921D4CDFA00E0199C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../../Desktop/1.png; sourceTree = "<group>"; };
 		1967BC4A21D4CDFA00E0199C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		1967BC4B21D4CDFA00E0199C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Desktop/2.png; sourceTree = "<group>"; };
 		1967BC4C21D4CDFA00E0199C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		1989E26C21DC90CE005E8256 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../../Desktop/1.png; sourceTree = "<group>"; };
+		1989E26D21DC90CE005E8256 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Desktop/2.png; sourceTree = "<group>"; };
+		1989E27121DE0F2D005E8256 /* VipAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipAlertView.swift; sourceTree = "<group>"; };
+		1989E27521DE2CAB005E8256 /* UIAlertController+Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Dialog.swift"; sourceTree = "<group>"; };
+		1989E27921DF15E1005E8256 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
+		1989E27B21DF1666005E8256 /* VipAlertOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipAlertOperationProtocol.swift; sourceTree = "<group>"; };
 		19DFFB7721D609BA001BDEBD /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
 		19DFFB7921D60BBD001BDEBD /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		19DFFB7B21D60C33001BDEBD /* CourseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResult.swift; sourceTree = "<group>"; };
@@ -128,6 +137,7 @@
 		19DFFB7F21D60D29001BDEBD /* JsonConvertCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonConvertCourseModel.swift; sourceTree = "<group>"; };
 		19DFFB8221D61408001BDEBD /* CourseReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReusableView.swift; sourceTree = "<group>"; };
 		19DFFB8421D6390A001BDEBD /* MoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveView.swift; sourceTree = "<group>"; };
+		19DFFB8621D766B6001BDEBD /* CoursePlayControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayControllerViewController.swift; sourceTree = "<group>"; };
 		19EFFE3721D4EB770065539A /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		19EFFE3821D4EB770065539A /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
 		30608EB784EAC613A76D3B9E /* Pods-releax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-releax.release.xcconfig"; path = "Pods/Target Support Files/Pods-releax/Pods-releax.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,7 +274,9 @@
 		1937EEBD21CB489F0061772E /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				1989E27021DE0EFE005E8256 /* view */,
 				1937EEC121CB48DC0061772E /* SettingController.swift */,
+				1989E27921DF15E1005E8256 /* PremiumViewController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -275,6 +287,7 @@
 				19DFFB8121D613CF001BDEBD /* view */,
 				19DFFB7621D6099C001BDEBD /* model */,
 				1937EEC321CB48F10061772E /* SitDownController.swift */,
+				19DFFB8621D766B6001BDEBD /* CoursePlayControllerViewController.swift */,
 			);
 			path = sit;
 			sourceTree = "<group>";
@@ -289,6 +302,7 @@
 				1937EED421CCFE6E0061772E /* SettingItemView.swift */,
 				1937EED621D091240061772E /* SettingPremiumView.swift */,
 				19DFFB8421D6390A001BDEBD /* MoveView.swift */,
+				1989E27521DE2CAB005E8256 /* UIAlertController+Dialog.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -296,8 +310,8 @@
 		1937EED821D0CA480061772E /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				1967BC4921D4CDFA00E0199C /* 1.png */,
-				1967BC4B21D4CDFA00E0199C /* 2.png */,
+				1989E26C21DC90CE005E8256 /* 1.png */,
+				1989E26D21DC90CE005E8256 /* 2.png */,
 				1967BC4C21D4CDFA00E0199C /* 3.png */,
 				1967BC4821D4CDFA00E0199C /* 4.png */,
 				1967BC4A21D4CDFA00E0199C /* 5.png */,
@@ -329,6 +343,15 @@
 				1967BC2721D4B38800E0199C /* HttpTools.swift */,
 			);
 			path = nettools;
+			sourceTree = "<group>";
+		};
+		1989E27021DE0EFE005E8256 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1989E27121DE0F2D005E8256 /* VipAlertView.swift */,
+				1989E27B21DF1666005E8256 /* VipAlertOperationProtocol.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		19C025CF21D0EA7700004883 /* view */ = {
@@ -477,18 +500,18 @@
 			files = (
 				1967BC5121D4CDFB00E0199C /* 3.png in Resources */,
 				19EFFE3A21D4EB770065539A /* course.json in Resources */,
+				1989E26F21DC90CE005E8256 /* 2.png in Resources */,
 				1967BC4D21D4CDFB00E0199C /* 4.png in Resources */,
 				1937EEE321D0CB340061772E /* sleep_music_course_list.json in Resources */,
-				1967BC5021D4CDFB00E0199C /* 2.png in Resources */,
 				1937EEE221D0CB340061772E /* tab_home_default_source.json in Resources */,
 				19EFFE3921D4EB770065539A /* sample.json in Resources */,
 				1937EE9521CB45750061772E /* LaunchScreen.storyboard in Resources */,
 				1937EE9221CB45750061772E /* Assets.xcassets in Resources */,
 				1937EEE121D0CB340061772E /* sleep_music_wake_up.json in Resources */,
+				1989E26E21DC90CE005E8256 /* 1.png in Resources */,
 				1937EE9021CB45740061772E /* Main.storyboard in Resources */,
 				1937EEDF21D0CB340061772E /* sleep_music_natural.json in Resources */,
 				1937EEE021D0CB340061772E /* mobutils_mediation_init_config.json in Resources */,
-				1967BC4E21D4CDFB00E0199C /* 1.png in Resources */,
 				1948040821D0F4C300A3D6D4 /* MusicCollectionViewCell.xib in Resources */,
 				1967BC4F21D4CDFB00E0199C /* 5.png in Resources */,
 				1937EEE421D0CB340061772E /* sleep_series_default.json in Resources */,
@@ -550,10 +573,13 @@
 				1948040721D0F4C300A3D6D4 /* MusicCollectionViewCell.swift in Sources */,
 				19DFFB7E21D60C99001BDEBD /* Result.swift in Sources */,
 				1937EEC921CB9F930061772E /* ItemUnitView.swift in Sources */,
+				1989E27221DE0F2D005E8256 /* VipAlertView.swift in Sources */,
 				1937EED721D091240061772E /* SettingPremiumView.swift in Sources */,
 				1937EED121CCDC730061772E /* CircleProgressView.swift in Sources */,
+				1989E27A21DF15E1005E8256 /* PremiumViewController.swift in Sources */,
 				1967BC2921D4B38800E0199C /* HttpTools.swift in Sources */,
 				1937EEBA21CB48240061772E /* RootTabBarController.swift in Sources */,
+				1989E27621DE2CAB005E8256 /* UIAlertController+Dialog.swift in Sources */,
 				1937EE8921CB45740061772E /* AppDelegate.swift in Sources */,
 				19419E3521D0F9E200452A4E /* CollectionReusableView.swift in Sources */,
 				19DFFB8021D60D29001BDEBD /* JsonConvertCourseModel.swift in Sources */,
@@ -564,11 +590,13 @@
 				1937EED321CCFBD30061772E /* LineView.swift in Sources */,
 				19DFFB8321D61408001BDEBD /* CourseReusableView.swift in Sources */,
 				1937EEC421CB48F10061772E /* SitDownController.swift in Sources */,
+				1989E27C21DF1666005E8256 /* VipAlertOperationProtocol.swift in Sources */,
 				1937EECD21CC9BEB0061772E /* PlayController.swift in Sources */,
 				1937EEC021CB48D00061772E /* HomeController.swift in Sources */,
 				19DFFB7C21D60C33001BDEBD /* CourseResult.swift in Sources */,
 				19DFFB7821D609BA001BDEBD /* CourseItem.swift in Sources */,
 				19DFFB7A21D60BBD001BDEBD /* Course.swift in Sources */,
+				19DFFB8721D766B6001BDEBD /* CoursePlayControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

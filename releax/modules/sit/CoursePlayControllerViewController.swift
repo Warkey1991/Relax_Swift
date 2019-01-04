@@ -221,7 +221,7 @@ class CoursePlayControllerViewController: UIViewController, MusicDownLoadProtoco
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, didStartPlayingQueueItemId queueItemId: NSObject) {
         timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 40)
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
         let seconds = audioPlayer.duration
         showPlayTime(Int(seconds))
         playImageButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)

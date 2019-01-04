@@ -148,7 +148,9 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     }
     
     @objc func filterAd() {
-        
+        let premiumViewController = PremiumViewController()
+        premiumViewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.present(premiumViewController, animated: true, completion: nil)
     }
     
     @objc func backPressed() {
@@ -250,7 +252,7 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     }
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, didStartPlayingQueueItemId queueItemId: NSObject) {
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
         let seconds = audioPlayer.duration
         showPlayTime(Int(seconds))
         playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
