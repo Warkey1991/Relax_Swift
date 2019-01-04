@@ -151,11 +151,11 @@
     ## 实践开发中的解决方案：
     
     1. **在UILabel中显示多行文本**
-           ```Swift
-           nameLabel.lineBreakMode = NSLineBreakMode.byWordWrapping 
-           nameLabel.numberOfLines = 0  //设置行数
-           nameLabel.sizeToFit()       
-           ```
+          ```Swift
+          nameLabel.lineBreakMode = NSLineBreakMode.byWordWrapping 
+          nameLabel.numberOfLines = 0  //设置行数
+          nameLabel.sizeToFit()  
+          ```
     2. **两个ViewController的跳转**
          从UIViewController中跳转到带有导航栏的页面
          ```Swift
@@ -234,7 +234,7 @@
               tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
             ```
               **b.** 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
-               ```Swift
+            ```Swift
                
                //返回分区的数目。此案例中是6个
                func numberOfSections(in collectionView: UICollectionView) -> Int {
