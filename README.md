@@ -223,8 +223,8 @@
         }
         ```
     7. **使用UICollectionView 添加不同的header**
-        **1** 创建UICollectionView
-              ```Swift
+        - 创建UICollectionView
+            ```Swift
               tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
               tableView.delegate = self
               tableView.dataSource = self
@@ -233,7 +233,7 @@
               // 注册一个headView，此段代码是设置header的关键部分
               tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
             ```
-        **2** 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
+        - 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
             
            ```Swift
                //返回分区的数目。此案例中是6个
@@ -317,7 +317,7 @@
                    self.present(nav, animated: true, completion: nil)
                }
                ```
-        **3** 获取数据后重新加载到UICollectionView
+        -  获取数据后重新加载到UICollectionView
            ```Swift
             tableView.reloadData()
            ```
