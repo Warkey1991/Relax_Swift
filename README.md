@@ -145,5 +145,182 @@
         }
 
     ```
-        
+    
+    
+    
+    ## 实践开发中的解决方案：
+    
+    1. **在UILabel中显示多行文本**
+           ```Swift
+           nameLabel.lineBreakMode = NSLineBreakMode.byWordWrapping 
+           nameLabel.numberOfLines = 0  //设置行数
+           nameLabel.sizeToFit()       
+           ```
+    2. **两个ViewController的跳转**
+         从UIViewController中跳转到带有导航栏的页面
+         ```Swift
+         let nav = UINavigationController.init(rootViewController: playController)
+         self.present(nav, animated: true, completion: nil)
+         ```
+    3. **导航栏透明**
+         ```Swift
+         //视图将要显示
+         override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            //设置导航栏背景透明
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+         }
+         
+         //视图将要消失
+         override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+         
+            //重置导航栏背景
+            self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+            self.navigationController?.navigationBar.shadowImage = nil
+         }
+         ```
+    4. **自定义弹窗的实现** :使用了一个ViewController，使其背景半透明。在使用UIAlertController时候踩了不少坑。后来弃之.....
+         ```Swift
+         let premiumViewController = PremiumViewController()
+         //页面跳转之前设置backgroundColor为半透明
+         premiumViewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+         self.present(premiumViewController, animated: true, completion: nil)
+         //然后在PremiumViewController中的viewDidLoad方法中设置
+         self.modalPresentationStyle = .custom
+         ```
+   5. **给UIButton 添加Action**
+       ```Swift
+        //closeAction为不带参数的函数
+        closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        //若需要传参
+        closeButton.addTarget(self, action: #selector(closeAction(sender:)), for: .touchUpInside)
+        @objc private func closeAction(sender: UIButton) {
+        }
+       ```
+   6. **非UIButton视图添加Action**：通过添加手势模仿点击事件
+        ```Swift
+        func setItems() {
+            for i in 0..<imageNames.count {
+                let itemView = ItemUnitView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height:self.frame.height))
+                itemView.setItem(image: UIImage(named: imageNames[i]), title: itemTitles[i])
+                itemView.tag = i
+                addArrangedSubview(itemView)
+                addGestureRecognizerListener(itemView)
+            }
+        }
+        private func addGestureRecognizerListener(_ itemView: ItemUnitView) {
+            let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(onClick(sender:)))
+            itemView.addGestureRecognizer(singleTapGesture)
+            itemView.isUserInteractionEnabled = true  // 需要拦截
+        }
+        //需要传参
+        @objc private func onClick(sender: UITapGestureRecognizer) {
+            if (self.delegate != nil) {
+                self.delegate?.onClickResponse(index: (sender.view?.tag)!)
+            }
+        }
+        ```
+        7. **使用UICollectionView 添加不同的header**
+              **a.** 创建UICollectionView
+              ```Swift
+              tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+              tableView.delegate = self
+              tableView.dataSource = self
+              tableView.backgroundColor = UIColor.clear
+              tableView.register(UINib(nibName: "MusicCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "music_Cell")
+              // 注册一个headView，此段代码是设置header的关键部分
+              tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
+            ```
+              **b.** 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
+               ```Swift
+               
+               //返回分区的数目。此案例中是6个
+               func numberOfSections(in collectionView: UICollectionView) -> Int {
+                    return musicData.count
+               }
+               
+               //计算每个区所展示的item数目
+               func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+                   if section == 0 {
+                        return 0
+                   }
+                   let music = musicData[section]
+                   var count = 0
+                   for (_,value) in music {
+                        count = value.count
+                   }
+                   return count
+               }
+               
+               //每个单元的布局view
+               func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "music_Cell", for: indexPath as IndexPath) as! MusicCollectionViewCell
+                   let music = musicData[indexPath.section]
+                   var musicItems = [MusicItem]()
+                   for (_,value) in music {
+                       musicItems.append(contentsOf: value)
+                       break
+                   }
+                   
+                   let item = musicItems[indexPath.row]
+                   cell.initData(imageUrl: item.thumb_url, name: item.title)
+                   return cell
+               }
+               
+               //设置header 的宽高
+               func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+               if section == 0 {
+                        return CGSize.init(width: functionView?.frame.width ?? 0, height: functionView?.frame.height ?? 0)
+                   } else {
+                        return CGSize.init(width: 400, height: 60)
+                   }
+               }
+               
+               //添加headerView 的布局
+               func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+                   var reusableview: UICollectionReusableView!
+                   if kind == UICollectionView.elementKindSectionHeader {
+                        reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header_view", for: indexPath)
+                        for view in reusableview.subviews {
+                                view.removeFromSuperview()
+                            }
+                       if indexPath.section != 0 {
+                           let headerView = CollectionReusableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 90))
+                           let music = musicData[indexPath.section]
+                           for (key, _) in music {
+                                    headerView.setText(text: key)
+                                    break
+                            }
+                            reusableview.addSubview(headerView)
+                        } else {
+                            reusableview.addSubview(functionView!)
+                        }
+                   }
+                   return reusableview
+               }
+               //点击每个cell的事件
+               func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                   let playController = PlayController()
+                   playController.index = indexPath.row + 1
+                   let music = musicData[indexPath.section]
+                   var count = 0
+                   var musicItems: [MusicItem]?
+                   for (_,value) in music {
+                       count = value.count
+                       musicItems = value
+                   }
+                   playController.count = count
+                   playController.musicItems = musicItems
+                   let nav = UINavigationController.init(rootViewController: playController)
+                   self.present(nav, animated: true, completion: nil)
+               }
+               ```
+            **c.** 获取数据后重新加载到UICollectionView
+            ```Swift
+             tableView.reloadData()
+            ```
+            
+         
 

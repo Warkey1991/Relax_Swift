@@ -12,8 +12,8 @@ class PremiumViewController: UIViewController, VipAlertOperationProtocol {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
         self.modalPresentationStyle = .custom
+        
         let vipView = VipAlertView()
         self.view.addSubview(vipView)
         vipView.delegate = self

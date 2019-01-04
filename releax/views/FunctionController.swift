@@ -38,7 +38,6 @@ class FunctionController: UIStackView {
             itemView.tag = i
             addArrangedSubview(itemView)
             addGestureRecognizerListener(itemView)
-           
         }
     }
     
