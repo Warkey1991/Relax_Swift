@@ -271,7 +271,7 @@
         }
     ```
 7. **使用UICollectionView 添加不同的header**
-    - 创建UICollectionView
+- 创建UICollectionView
     ```Swift
     tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
     tableView.delegate = self
@@ -281,61 +281,59 @@
     // 注册一个headView，此段代码是设置header的关键部分
     tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
     ```
-    - 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
-        ```Swift
+- 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
+    ```Swift
+    //返回分区的数目。此案例中是6个
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return musicData.count
+    }
+    //计算每个区所展示的item数目
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 0
+        }
+        let music = musicData[section]
+        var count = 0
+        for (_,value) in music {
+            count = value.count
+        }
+        return count
+    }
         
-        //返回分区的数目。此案例中是6个
-        func numberOfSections(in collectionView: UICollectionView) -> Int {
-            return musicData.count
+    //每个单元的布局view
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "music_Cell", for: indexPath as IndexPath) as! MusicCollectionViewCell
+        let music = musicData[indexPath.section]
+        var musicItems = [MusicItem]()
+        for (_,value) in music {
+            musicItems.append(contentsOf: value)
+            break
         }
         
-        //计算每个区所展示的item数目
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            if section == 0 {
-                return 0
-            }
-            let music = musicData[section]
-            var count = 0
-            for (_,value) in music {
-                count = value.count
-            }
-            return count
+        let item = musicItems[indexPath.row]
+        cell.initData(imageUrl: item.thumb_url, name: item.title)
+        return cell
+    }
+    
+    //设置header 的宽高
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize.init(width: functionView?.frame.width ?? 0, height: functionView?.frame.height ?? 0)
+        } else {
+            return CGSize.init(width: 400, height: 60)
         }
+    }
         
-        //每个单元的布局view
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "music_Cell", for: indexPath as IndexPath) as! MusicCollectionViewCell
-            let music = musicData[indexPath.section]
-            var musicItems = [MusicItem]()
-            for (_,value) in music {
-                musicItems.append(contentsOf: value)
-                break
-            }
-            
-            let item = musicItems[indexPath.row]
-            cell.initData(imageUrl: item.thumb_url, name: item.title)
-            return cell
+    //添加headerView 的布局
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var reusableview: UICollectionReusableView!
+        if kind == UICollectionView.elementKindSectionHeader {
+        reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header_view", for: indexPath)
+        for view in reusableview.subviews {
+            view.removeFromSuperview()
         }
-        
-        //设置header 的宽高
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-            if section == 0 {
-                return CGSize.init(width: functionView?.frame.width ?? 0, height: functionView?.frame.height ?? 0)
-            } else {
-                return CGSize.init(width: 400, height: 60)
-            }
-        }
-        
-        //添加headerView 的布局
-        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-            var reusableview: UICollectionReusableView!
-            if kind == UICollectionView.elementKindSectionHeader {
-            reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header_view", for: indexPath)
-            for view in reusableview.subviews {
-                view.removeFromSuperview()
-            }
-            if indexPath.section != 0 {
-            let headerView = CollectionReusableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 90))
+        if indexPath.section != 0 {
+        let headerView = CollectionReusableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 90))
             let music = musicData[indexPath.section]
             for (key, _) in music {
                 headerView.setText(text: key)
@@ -348,27 +346,27 @@
             }
             return reusableview
         }
-        //点击每个cell的事件
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let playController = PlayController()
-            playController.index = indexPath.row + 1
-            let music = musicData[indexPath.section]
-            var count = 0
-            var musicItems: [MusicItem]?
-            for (_,value) in music {
-                count = value.count
-                musicItems = value
-            }
-            playController.count = count
-            playController.musicItems = musicItems
-            let nav = UINavigationController.init(rootViewController: playController)
-            self.present(nav, animated: true, completion: nil)
+    //点击每个cell的事件
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let playController = PlayController()
+        playController.index = indexPath.row + 1
+        let music = musicData[indexPath.section]
+        var count = 0
+        var musicItems: [MusicItem]?
+        for (_,value) in music {
+            count = value.count
+            musicItems = value
         }
-        ```
+        playController.count = count
+        playController.musicItems = musicItems
+        let nav = UINavigationController.init(rootViewController: playController)
+        self.present(nav, animated: true, completion: nil)
+    }
+    ```
     -  获取数据后重新加载到UICollectionView
-           ```Swift
-            tableView.reloadData()
-           ```
+        ```Swift
+        tableView.reloadData()
+        ```
 8. **让图片左右缓慢移动的MoveView**：[MoveView](https://www.cnblogs.com/YouXianMing/p/4257078.html) 从这篇文章中获得了启发，修改了动画部分的代码：
     ```Swift
         import UIKit
