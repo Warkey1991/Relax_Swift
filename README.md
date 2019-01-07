@@ -271,17 +271,17 @@
         }
     ```
 7. **使用UICollectionView 添加不同的header**
-        - 创建UICollectionView
-        ```Swift
-              tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-              tableView.delegate = self
-              tableView.dataSource = self
-              tableView.backgroundColor = UIColor.clear
-              tableView.register(UINib(nibName: "MusicCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "music_Cell")
-              // 注册一个headView，此段代码是设置header的关键部分
-              tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
-            ```
-        - 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
+    - 创建UICollectionView
+    ```Swift
+    tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.backgroundColor = UIColor.clear
+    tableView.register(UINib(nibName: "MusicCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "music_Cell")
+    // 注册一个headView，此段代码是设置header的关键部分
+    tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
+    ```
+    - 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
         ```Swift
         
         //返回分区的数目。此案例中是6个
