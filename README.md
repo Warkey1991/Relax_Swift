@@ -363,10 +363,10 @@
         self.present(nav, animated: true, completion: nil)
     }
     ```
-    -  获取数据后重新加载到UICollectionView
-        ```Swift
-        tableView.reloadData()
-        ```
+-  获取数据后重新加载到UICollectionView
+    ```Swift
+    tableView.reloadData()
+    ```
 8. **让图片左右缓慢移动的MoveView**：[MoveView](https://www.cnblogs.com/YouXianMing/p/4257078.html) 从这篇文章中获得了启发，修改了动画部分的代码：
     ```Swift
         import UIKit
