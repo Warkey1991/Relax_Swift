@@ -147,8 +147,8 @@
     ```
 7. **Json解析**：使用了ios自带的解析方法。
         - 实体类需要实现Decodable协议。嵌套类也需要实现
-        ```Swift
         
+    ```Swift
         class Music: Decodable {
             var sleep_music_list:[MusicItem]?
         }
@@ -168,7 +168,7 @@
             var classes: String?
             var order:Int?
         }
-        ```
+    ```
         
     - 解析本地json文件，代码如下：
         ```Swift
@@ -187,15 +187,15 @@
         }
         ```
 8. **String字符串插值 (String Interpolation)**：字符串插值是一种构建新字符串的方式，可以在其中包含常量、变量、字面量和表达式。 您插入的字符串字面量的每一项都被包裹在以反斜线为前缀的圆括号中:
-           ```Swift
-           
+        ```Swift
+        
            func progress(pogress pogressDouble: Double) {
                let result = pogressDouble * 100
                DispatchQueue.main.async {
                     self.timeLabel.text = "DownLoading(\(Int(result))%)"
                }
            }
-           ```
+       ```
     
     
     
