@@ -505,6 +505,89 @@
         }
     }
     ```
+11. **画线**:开发中经常需要分割线，以下类就是实现了画线的功能,现在是固定了颜色和宽度。后期会随着项目的需要改成动态的。
+      [UIBezierPath的使用](https://www.jianshu.com/p/c883fbf52681)
+     ```Swift
+     import UIKit
+     class LineView: UIView {
+         override init(frame: CGRect) {
+             super.init(frame: frame)
+             drawLine()
+         }
+         
+         required init?(coder:NSCoder) {
+             super.init(coder: coder)
+             drawLine()
+         }
+         
+         
+         func drawLine() {
+             let line = CAShapeLayer()
+             let linePath = UIBezierPath()
+             linePath.move(to: CGPoint(x: self.frame.origin.x, y: 0))
+             linePath.addLine(to: CGPoint(x: self.frame.width, y: 0))
+             line.path = linePath.cgPath
+             line.strokeColor = UIColor.gray.cgColor
+             line.lineWidth = 0.1
+             line.lineJoin = CAShapeLayerLineJoin.round
+             self.layer.addSublayer(line)
+         }
+     }
+     ```
+12. **自定义进度条**:也是使用CAShapeLayer 和 UIBezierPath来进行绘制的。
+    ```Swift
+    import UIKit
+    class CircleProgressView: UIView {
+        var unfinishedCircleLayer: CAShapeLayer?
+        var finishedCircleLayer: CAShapeLayer?
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            drawCircle()
+        }
+        
+        required init?(coder:NSCoder) {
+            super.init(coder: coder)
+            drawCircle()
+        }
+        
+        func drawCircle(progress: Double = 0) {
+            /*
+            参数解释：
+            1.center: CGPoint  中心点坐标
+            2.radius: CGFloat  半径
+            3.startAngle: CGFloat 起始点所在弧度
+            4.endAngle: CGFloat   结束点所在弧度
+            5.clockwise: Bool     是否顺时针绘制
+            7.画圆时，没有坐标这个概念，根据弧度来定位起始点和结束点位置。M_PI即是圆周率。画半圆即(0,M_PI),代表0到180度。全圆则是(0,M_PI*2)，代表0到360度
+            */
+            let radius = self.frame.width / 2
+            let y = self.frame.origin.y + radius
+            let mainPath = UIBezierPath(arcCenter: CGPoint(x: 0, y: y), radius: radius, startAngle: CGFloat(-M_PI_2), endAngle: CGFloat(M_PI*3.0/2.0), clockwise: true)
+            unfinishedCircleLayer = CAShapeLayer()
+            unfinishedCircleLayer?.path = mainPath.cgPath
+            unfinishedCircleLayer?.lineWidth = 6
+            unfinishedCircleLayer?.frame = self.bounds
+            unfinishedCircleLayer?.fillColor = UIColor.clear.cgColor
+            unfinishedCircleLayer?.strokeColor = UIColor.init(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3).cgColor
+            self.layer.addSublayer(unfinishedCircleLayer!)
+            
+            finishedCircleLayer = CAShapeLayer()
+            finishedCircleLayer?.path = mainPath.cgPath
+            finishedCircleLayer?.lineWidth = 6
+            finishedCircleLayer?.frame = self.bounds
+            finishedCircleLayer?.fillColor = UIColor.clear.cgColor
+            finishedCircleLayer?.strokeColor = UIColor.init(displayP3Red: 255, green: 255, blue: 255, alpha: 1).cgColor
+            finishedCircleLayer?.strokeEnd = 0
+            self.layer.addSublayer(finishedCircleLayer!)
+        }
+        //外部直接在需要更新进度的时候调用该函数即可
+        func drawAngle(progress: Double) {
+            finishedCircleLayer?.strokeEnd = CGFloat(progress)
+        }
+    }
+
+    ```
 
      
      
