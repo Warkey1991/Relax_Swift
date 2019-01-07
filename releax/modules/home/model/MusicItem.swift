@@ -21,7 +21,6 @@ class MusicItem: Decodable{
     var id: Int?
     var classes: String?
     var order:Int?
-    
 }
 
 

@@ -145,6 +145,55 @@
         }
 
     ```
+    7. **Json解析**：使用了ios自带的解析方法。
+        - 实体类需要实现Decodable协议。嵌套类也需要实现
+        ```
+        Swift
+        class Music: Decodable {
+            var sleep_music_list:[MusicItem]?
+        }
+        
+        class MusicItem: Decodable{
+            var show_nums: Int
+            var product_id: String?
+            var banner_url: String?
+            var title: String?
+            var background_url: String?
+            var video_url: String?
+            var descrip: String?
+            var music_url: String?
+            var thumb_url: String?
+            var type: String?
+            var id: Int?
+            var classes: String?
+            var order:Int?
+        }
+        ```
+        - 解析本地json文件，代码如下：
+        ```Swift
+        private class func jsonParser(fileName: String)-> [MusicItem] {
+            //获取本地文件的URL对象
+            guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: nil) else {
+                fatalError("JSON File Fetch Failed")
+            }
+            //如果不想处理异常那么可以用 try? 这个关键字,使用这个关键字返回一个可选值类型,如果有异常出现,返回nil.如果没有异常,则返回可选值.
+            let data = try? Data.init(contentsOf: fileURL)
+            let decoder = JSONDecoder()  //new一个JSONDecoder对象用于解析json文件。
+            guard let music = try? decoder.decode(Music.self, from: data!) else {
+                fatalError("JSON Decode Failed")
+            }
+            return music.sleep_music_list!
+        }
+        ```
+        8. **String字符串插值 (String Interpolation)**：字符串插值是一种构建新字符串的方式，可以在其中包含常量、变量、字面量和表达式。 您插入的字符串字面量的每一项都被包裹在以反斜线为前缀的圆括号中:
+           ```Swift
+           func progress(pogress pogressDouble: Double) {
+               let result = pogressDouble * 100
+               DispatchQueue.main.async {
+                    self.timeLabel.text = "DownLoading(\(Int(result))%)"
+               }
+           }
+           ```
     
     
     
