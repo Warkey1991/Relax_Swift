@@ -145,7 +145,7 @@
         }
 
     ```
-    7. **Json解析**：使用了ios自带的解析方法。
+7. **Json解析**：使用了ios自带的解析方法。
         - 实体类需要实现Decodable协议。嵌套类也需要实现
         ```
         Swift
@@ -185,7 +185,7 @@
             return music.sleep_music_list!
         }
         ```
-        8. **String字符串插值 (String Interpolation)**：字符串插值是一种构建新字符串的方式，可以在其中包含常量、变量、字面量和表达式。 您插入的字符串字面量的每一项都被包裹在以反斜线为前缀的圆括号中:
+8. **String字符串插值 (String Interpolation)**：字符串插值是一种构建新字符串的方式，可以在其中包含常量、变量、字面量和表达式。 您插入的字符串字面量的每一项都被包裹在以反斜线为前缀的圆括号中:
            ```Swift
            func progress(pogress pogressDouble: Double) {
                let result = pogressDouble * 100
@@ -197,7 +197,7 @@
     
     
     
-    ## 实践开发中的解决方案：
+## 实践开发中的解决方案：
     
     1. **在UILabel中显示多行文本**
           ```Swift
