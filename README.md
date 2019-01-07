@@ -187,34 +187,33 @@
         }
         ```
 8. **String字符串插值 (String Interpolation)**：字符串插值是一种构建新字符串的方式，可以在其中包含常量、变量、字面量和表达式。 您插入的字符串字面量的每一项都被包裹在以反斜线为前缀的圆括号中:
-        ```Swift
+    ```Swift
+    func progress(pogress pogressDouble: Double) {
+        let result = pogressDouble * 100
+        DispatchQueue.main.async {
+            self.timeLabel.text = "DownLoading(\(Int(result))%)"
+        }
+    }
+    ```
         
-           func progress(pogress pogressDouble: Double) {
-               let result = pogressDouble * 100
-               DispatchQueue.main.async {
-                    self.timeLabel.text = "DownLoading(\(Int(result))%)"
-               }
-           }
-       ```
-    
     
     
 ## 实践开发中的解决方案：
-    
-    1. **在UILabel中显示多行文本**
+1. **在UILabel中显示多行文本**
           ```Swift
           nameLabel.lineBreakMode = NSLineBreakMode.byWordWrapping 
           nameLabel.numberOfLines = 0  //设置行数
           nameLabel.sizeToFit()  
           ```
-    2. **两个ViewController的跳转**
+2. **两个ViewController的跳转**
          从UIViewController中跳转到带有导航栏的页面
          ```Swift
          let nav = UINavigationController.init(rootViewController: playController)
          self.present(nav, animated: true, completion: nil)
          ```
-    3. **导航栏透明**
-         ```Swift
+3. **导航栏透明**
+        ```Swift
+        
          //视图将要显示
          override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
@@ -232,7 +231,7 @@
             self.navigationController?.navigationBar.shadowImage = nil
          }
          ```
-    4. **自定义弹窗的实现** :使用了一个ViewController，使其背景半透明。在使用UIAlertController时候踩了不少坑。后来弃之.....
+4. **自定义弹窗的实现** :使用了一个ViewController，使其背景半透明。在使用UIAlertController时候踩了不少坑。后来弃之.....
          ```Swift
          let premiumViewController = PremiumViewController()
          //页面跳转之前设置backgroundColor为半透明
@@ -241,7 +240,7 @@
          //然后在PremiumViewController中的viewDidLoad方法中设置
          self.modalPresentationStyle = .custom
          ```
-   5. **给UIButton 添加Action**
+5. **给UIButton 添加Action**
        ```Swift
         //closeAction为不带参数的函数
         closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
@@ -250,7 +249,7 @@
         @objc private func closeAction(sender: UIButton) {
         }
        ```
-   6. **非UIButton视图添加Action**：通过添加手势模仿点击事件
+6. **非UIButton视图添加Action**：通过添加手势模仿点击事件
         ```Swift
         func setItems() {
             for i in 0..<imageNames.count {
@@ -273,9 +272,9 @@
             }
         }
         ```
-    7. **使用UICollectionView 添加不同的header**
+7. **使用UICollectionView 添加不同的header**
         - 创建UICollectionView
-            ```Swift
+        ```Swift
               tableView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
               tableView.delegate = self
               tableView.dataSource = self
@@ -286,7 +285,7 @@
             ```
         - 实现UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout协议的方法
             
-           ```Swift
+        ```Swift
                //返回分区的数目。此案例中是6个
                func numberOfSections(in collectionView: UICollectionView) -> Int {
                     return musicData.count
@@ -372,8 +371,8 @@
            ```Swift
             tableView.reloadData()
            ```
-    8. **让图片左右缓慢移动的MoveView**：[MoveView](https://www.cnblogs.com/YouXianMing/p/4257078.html) 从这篇文章中获得了启发，修改了动画部分的代码：
-        ```Swift
+8. **让图片左右缓慢移动的MoveView**：[MoveView](https://www.cnblogs.com/YouXianMing/p/4257078.html) 从这篇文章中获得了启发，修改了动画部分的代码：
+    ```Swift
         import UIKit
         
         class MoveView: UIView {
