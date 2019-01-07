@@ -195,6 +195,23 @@
         }
     }
     ```
+    
+    9. **Switch语句**:在Swift中，不需要在每一个case后面增加break，执行完case对应的代码后默认会自动退出switch语句
+                                在Swift中，case后面必有可执行的代码,switch要保证处理所有可能的情况，不然编译器直接报错，因此，default一定要加。
+     ```Swift
+     @objc func clickResponse(sender: UITapGestureRecognizer) {
+         switch sender.view?.tag {
+             case 0: break
+             
+             case 1:likeUs()
+             
+             case 2: sendEmail()
+             
+             default: break
+         
+         }
+     }
+     ```
         
     
     
@@ -440,6 +457,57 @@
         }
 
         ```
+9. **直接发送邮件**：[用Swift写一个发送邮件的iOS用户反馈](https://www.jianshu.com/p/f49b2253da80)
+                                  首先需要导入框架MessageUI.framework。在项目设置Build Phases的Link Binary With Libraries中添加MessageUI.framework
+                                  然后在Controller里导入头文件import MessageUI。并给Controller加上MFMailComposeViewControllerDelegate协议。
+    ```Swift
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail(){
+            let emailController = MFMailComposeViewController()
+            emailController.mailComposeDelegate = self
+            //设置邮件地址、主题及正文
+            emailController.setToRecipients(["warkey1991@gmail.com"])
+            emailController.setSubject("Relax Music 反馈")
+            emailController.setMessageBody("这是测试反馈的案例", isHTML: false)
+            self.present(emailController, animated: true, completion: nil)
+        } else {
+            let sendMailErrorAlert = UIAlertController(title: "无法发送邮件", message: "您的设备尚未设置邮箱，请在“邮件”应用中设置后再尝试发送。", preferredStyle: .alert)
+            sendMailErrorAlert.addAction(UIAlertAction(title: "确定", style: .default) { _ in })
+            self.present(sendMailErrorAlert, animated: true){}
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result.rawValue {
+            case MFMailComposeResult.cancelled.rawValue:
+                print("取消发送")
+            case MFMailComposeResult.sent.rawValue:
+                print("发送成功")
+            default:
+                break
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    ```
+10. **去App Store应用中评分** :找到需要评论的app的bundleID
+    ```Swift
+    func likeUs() {
+        let urlString = "itms-apps://itunes.apple.com/app/id444934666"
+        let url = URL(string: urlString)
+        //根据iOS系统版本，分别处理
+        if #available(iOS 10, *) {
+        UIApplication.shared.open(url!, options: [:],
+            completionHandler: {
+            (success) in
+            })
+        } else {
+            UIApplication.shared.openURL(url!)
+        }
+    }
+    ```
+
+     
+     
            
          
 

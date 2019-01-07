@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingController: UIViewController {
+class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
     var titleLabel: UILabel = UILabel()
     let labels: [String] = ["Notification", "Like Us", "Feedback", "About Privacy"]
     override func viewDidLoad() {
@@ -75,16 +76,19 @@ class SettingController: UIViewController {
         premiumView.isUserInteractionEnabled = true
         premiumView.addGestureRecognizer(gestureRecognizer)
        
-        
         //单个条目
         for i in 0..<labels.count {
             let itemView = SettingItemView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
             contentView.addArrangedSubview(itemView)
             itemView.setText(labels[i])
+            itemView.tag = i
             itemView.snp.makeConstraints{make->Void in
                 make.height.equalTo(80)
                 make.width.equalToSuperview()
            }
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickResponse(sender:)))
+            itemView.isUserInteractionEnabled = true
+            itemView.addGestureRecognizer(tapGesture)
         }
        
         let contentHeight = CGFloat(80 * labels.count + 160)
@@ -98,5 +102,60 @@ class SettingController: UIViewController {
     }
     
   
+    @objc func clickResponse(sender: UITapGestureRecognizer) {
+        switch sender.view?.tag {
+        case 0: break
+            
+        case 1:likeUs()
+            
+        case 2: sendEmail()
+            
+        default: break
+            
+        }
+    }
+    func likeUs() {
+        let urlString = "itms-apps://itunes.apple.com/app/id444934666"
+        let url = URL(string: urlString)
+        //根据iOS系统版本，分别处理
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url!, options: [:],
+                                      completionHandler: {
+                                        (success) in
+            })
+        } else {
+            UIApplication.shared.openURL(url!)
+        }
+    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail(){
+            let emailController = MFMailComposeViewController()
+            emailController.mailComposeDelegate = self
+            //设置邮件地址、主题及正文
+            emailController.setToRecipients(["warkey1991@gmail.com"])
+            emailController.setSubject("Relax Music 反馈")
+            emailController.setMessageBody("这是测试反馈的案例", isHTML: false)
+            self.present(emailController, animated: true, completion: nil)
+        } else {
+            let sendMailErrorAlert = UIAlertController(title: "无法发送邮件", message: "您的设备尚未设置邮箱，请在“邮件”应用中设置后再尝试发送。", preferredStyle: .alert)
+            sendMailErrorAlert.addAction(UIAlertAction(title: "确定", style: .default) { _ in })
+            self.present(sendMailErrorAlert, animated: true){}
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue:
+            print("取消发送")
+        case MFMailComposeResult.sent.rawValue:
+            print("发送成功")
+        default:
+            break
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+   
 }
 
