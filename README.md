@@ -196,7 +196,7 @@
     }
     ```
     
-    9. **Switch语句**:在Swift中，不需要在每一个case后面增加break，执行完case对应的代码后默认会自动退出switch语句
+9. **Switch语句**:在Swift中，不需要在每一个case后面增加break，执行完case对应的代码后默认会自动退出switch语句
                                 在Swift中，case后面必有可执行的代码,switch要保证处理所有可能的情况，不然编译器直接报错，因此，default一定要加。
      ```Swift
      @objc func clickResponse(sender: UITapGestureRecognizer) {
@@ -212,7 +212,48 @@
          }
      }
      ```
+10. **lazy修饰符**：[Swift lazy](https://swift.gg/2016/03/25/being-lazy/) 延迟初始化，提升性能。lazy只可修饰变量，不可修饰常量。<br>
+                                该实战中使用了闭包做初始化，初始化相对复杂的对象。
+     ```Swift
+     /// black layer
+     lazy var blackView: UIView = {
+         let view = UIView()
+         if let frame = self.containerView?.bounds {
+            view.frame = frame
+         }
+         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+         let gesture = UITapGestureRecognizer(target: self, action: #selector(sendHideNotification))
+         view.addGestureRecognizer(gesture)
+         return view
+     }()
+     ```
+11. **扩展extension**：[Swift - 基础之extension](https://www.jianshu.com/p/783df05a9b59)关键字extension是扩展一个类。即在没有权限获取到原始代码的情况下, 为类增加新功能.
+    ```Swift
+    // MARK: - add function to UIViewController to call easily
+    extension UIViewController: UIViewControllerTransitioningDelegate {
+    
+        /// function to show the bottom view
+        ///
+        /// - Parameter vc: class name of bottom view,可以直接调用该函数
+        public func presentBottom(_ vc: PresentBottomVC ) {
+            vc.modalPresentationStyle = .custom
+            vc.transitioningDelegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
         
+        // function refers to UIViewControllerTransitioningDelegate
+        public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+            let present = PresentBottom(presentedViewController: presented, presenting: presenting)
+            return present
+        }
+    }
+    
+    @objc func showSongList() {
+        let bottomVC = BottomPopVC()
+        bottomVC.musicItems = musicItems
+        self.presentBottom(bottomVC)
+    }
+    ```
     
     
 ## 实践开发中的解决方案：
@@ -586,8 +627,11 @@
             finishedCircleLayer?.strokeEnd = CGFloat(progress)
         }
     }
-
     ```
+13. **底部弹窗**：[PresentBottom](https://github.com/IkeBanPC/PresentBottom) <br>
+                              效果图如下
+        <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/6.png" width="200" height="360">
+   
 
      
      

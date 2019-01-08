@@ -173,7 +173,9 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     }
     
     @objc func showSongList() {
-        
+        let bottomVC = BottomPopVC()
+        bottomVC.musicItems = musicItems
+        self.presentBottom(bottomVC)
     }
     
     //视图将要显示
@@ -268,6 +270,7 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishPlayingQueueItemId queueItemId: NSObject, with stopReason: STKAudioPlayerStopReason, andProgress progress: Double, andDuration duration: Double) {
         timer.invalidate()
         progressView?.drawAngle(progress: 1)
+        showPlayTime(0)
     }
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, unexpectedError errorCode: STKAudioPlayerErrorCode) {

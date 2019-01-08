@@ -48,7 +48,6 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
         //添加UIScrollview以保证所有条目都能显示
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - topBarView.frame.height))
         scrollView.bounces = true
-       
         scrollView.alwaysBounceVertical = true
         scrollView.scrollsToTop = true
         self.view.addSubview(scrollView)
@@ -75,7 +74,7 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showVipALertView))
         premiumView.isUserInteractionEnabled = true
         premiumView.addGestureRecognizer(gestureRecognizer)
-       
+        
         //单个条目
         for i in 0..<labels.count {
             let itemView = SettingItemView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
@@ -155,7 +154,5 @@ class SettingController: UIViewController, MFMailComposeViewControllerDelegate {
         }
         self.dismiss(animated: true, completion: nil)
     }
-    
-   
 }
 
