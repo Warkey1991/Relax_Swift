@@ -632,6 +632,50 @@
                               效果图如下
         <img src="https://github.com/Warkey1991/Relax_Swift/blob/master/releax/resource/6.png" width="200" height="360">
    
+14. **UILabel设置富文本**：使用NSMutableAttributedString对象进行操作
+    ```Swift
+    private func addViews() {
+        self.layer.cornerRadius = 10
+        self.backgroundColor = UIColor.lightGray
+        
+        timeAndUnitLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 0))
+        self.addSubview(timeAndUnitLabel)
+        timeAndUnitLabel.attributedText = attributedText(firstString: "100", lastString: "min")
+        timeAndUnitLabel.textAlignment = .center
+        timeAndUnitLabel.snp.makeConstraints{make in
+            make.top.equalTo(40)
+            make.centerX.equalToSuperview()
+        }
+    
+        nameLabel = UILabel()
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        nameLabel.text = "Music"
+        self.addSubview(nameLabel)
+        
+        nameLabel.snp.makeConstraints{make in
+            make.bottom.equalTo(-40)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
+    func attributedText(firstString: String, lastString: String) -> NSAttributedString {
+        let sourceText = (firstString + " " + lastString) as NSString
+        let result = NSMutableAttributedString(string: sourceText as String)
+        let attributedForFirstWord = [
+        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)
+        ]
+        
+        let attributedForLastWord = [
+        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)
+        ]
+        
+        result.setAttributes(attributedForFirstWord, range: sourceText.range(of: firstString))
+        result.setAttributes(attributedForLastWord, range: sourceText.range(of: lastString))
+        
+        return result
+    }
+
+    ```
 
      
      
