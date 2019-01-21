@@ -676,17 +676,17 @@
     }
 
     ```
-    15. **获取navigationBar的高度**:
-        ```Swift
-        extension UIViewController {
-            var topbarHeight: CGFloat {
-                return UIApplication.shared.statusBarFrame.size.height +
-                (self.navigationController?.navigationBar.frame.height ?? 0.0)
-                }
-        }
-        ```
-    16. **获取底部TabBar的高度以及适配全面屏的问题**: [iphoneX适配](https://stackoverflow.com/questions/46829840/get-safe-area-inset-top-and-bottom-heights/46831519#46831519)
-        ```Swift
+15. **获取navigationBar的高度**:
+    ```Swift
+     extension UIViewController {
+        var topbarHeight: CGFloat {
+            return UIApplication.shared.statusBarFrame.size.height +
+            (self.navigationController?.navigationBar.frame.height ?? 0.0)
+            }
+     }
+    ```
+16. **获取底部TabBar的高度以及适配全面屏的问题**: [iphoneX适配](https://stackoverflow.com/questions/46829840/get-safe-area-inset-top-and-bottom-heights/46831519#46831519)
+    ```Swift
          AppDelegate.tabHeight = self.tabBar.frame.size.height
          if #available(iOS 11.0, *) { //Get safe area inset top and bottom heights
              let window = UIApplication.shared.keyWindow
@@ -694,8 +694,8 @@
              bottomMargin = AppDelegate.tabHeight + (bottomPadding ?? 0)
          }
         ```
-    17. ** 16进制颜色转换** ：
-        ```Swift
+17. ** 16进制颜色转换** ：
+       ```Swift
         extension UIColor {
             // 16进制 转 RGBA
             class func rgbaColorFromHex(rgb:Int, alpha: CGFloat) ->UIColor {
@@ -715,8 +715,8 @@
         
         }
         ```
-    18. **View添加阴影**：
-        ```Swift
+18. **View添加阴影**：
+    ```Swift
         private func addShadow() {
             shadowView.backgroundColor = UIColor.clear
             shadowView.clipsToBounds = false
