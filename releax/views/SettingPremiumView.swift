@@ -38,7 +38,7 @@ class SettingPremiumView: UIView {
         }
         hotImageView.snp.makeConstraints{make->Void in
             make.left.equalTo(titleLabel.snp.right).offset(8)
-             make.centerY.equalTo(titleAndImageView.center)
+            make.centerY.equalTo(titleAndImageView.center)
         }
         
         let labelOne = UILabel()

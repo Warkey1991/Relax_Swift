@@ -97,8 +97,16 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
             make.centerX.equalTo(self.view)
         }
         
-        itemLabel.textColor = UIColor.white
+        let circleLineView = CircleLineView(frame: CGRect(x: 0 , y: 0, width: self.view.frame.width*2/3, height: self.view.frame.width*2/3))
+        self.view.addSubview(circleLineView)
+//        circleLineView.snp.makeConstraints{make->Void in
+//            make.centerY.equalTo(self.view).offset(-220)
+//            make.centerX.equalTo(self.view)
+//        }
+        circleLineView.startAnimation()
         
+        
+        itemLabel.textColor = UIColor.white
         timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 20)
         timeLabel.textColor = UIColor.white
         
@@ -116,6 +124,9 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
             make.centerY.equalTo(self.progressView!.center)
             make.centerX.equalTo(self.progressView!)
         }
+        
+      
+        
     }
     
     func addButtons() {

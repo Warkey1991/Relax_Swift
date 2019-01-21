@@ -676,6 +676,56 @@
     }
 
     ```
+    15. **获取navigationBar的高度**:
+        ```Swift
+        extension UIViewController {
+            var topbarHeight: CGFloat {
+                return UIApplication.shared.statusBarFrame.size.height +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+                }
+        }
+        ```
+    16. **获取底部TabBar的高度以及适配全面屏的问题**: [iphoneX适配](https://stackoverflow.com/questions/46829840/get-safe-area-inset-top-and-bottom-heights/46831519#46831519)
+        ```Swift
+         AppDelegate.tabHeight = self.tabBar.frame.size.height
+         if #available(iOS 11.0, *) { //Get safe area inset top and bottom heights
+             let window = UIApplication.shared.keyWindow
+             let bottomPadding = window?.safeAreaInsets.bottom
+             bottomMargin = AppDelegate.tabHeight + (bottomPadding ?? 0)
+         }
+        ```
+    17. ** 16进制颜色转换** ：
+        ```Swift
+        extension UIColor {
+            // 16进制 转 RGBA
+            class func rgbaColorFromHex(rgb:Int, alpha: CGFloat) ->UIColor {
+                return UIColor(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0,
+                               green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0,
+                               blue: ((CGFloat)(rgb & 0xFF)) / 255.0,
+                               alpha: alpha)
+            }
+        
+            //16进制 转 RGB
+            class func rgbColorFromHex(rgb:Int) -> UIColor {
+                return UIColor(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0,
+                               green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0,
+                               blue: ((CGFloat)(rgb & 0xFF)) / 255.0,
+                               alpha: 1.0)
+            }
+        
+        }
+        ```
+    18. **View添加阴影**：
+        ```Swift
+        private func addShadow() {
+            shadowView.backgroundColor = UIColor.clear
+            shadowView.clipsToBounds = false
+            shadowView.layer.shadowColor = UIColor.rgbColorFromHex(rgb: 0x908BAF).cgColor
+            shadowView.layer.shadowOpacity = 0.36
+            shadowView.layer.shadowOffset = CGSize(width: 0, height: 6)
+            shadowView.layer.shadowRadius = 4
+        }
+        ```
 
      
      
