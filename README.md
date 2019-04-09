@@ -726,6 +726,43 @@
             shadowView.layer.shadowRadius = 4
         }
         ```
+        
+19. **控制后台播放音频**
+      先要开启后台播放的功能，然后添加一下代码，
+      ```Swift
+        func setupRemoteTransportControls() {
+            let commandCenter = MPRemoteCommandCenter.shared()
+            commandCenter.playCommand.addTarget { event  in
+            if self.audioPlayer.state == .paused {
+                self.audioPlayer.resume()
+                return .success
+            }
+      
+            return .commandFailed
+        }
+      
+        commandCenter.pauseCommand.addTarget { event  in
+            if self.audioPlayer.state == .playing {
+                self.audioPlayer.pause()
+                return .success
+            }
+            return .commandFailed
+        }
+      }
+      
+      func setupNowPlaying() {
+            var nowPlayingInfo = [String: Any]()
+            nowPlayingInfo[MPMediaItemPropertyTitle] = musicItems![index].title
+            if let image = ImageCache.default.retrieveImageInMemoryCache(forKey: musicItems![index].thumb_url ?? "")  {
+                nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size) { size in
+                    return image
+               }
+            nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = audioPlayer.duration
+            //nowPlayingInfo[MPMediaPlaylist] = MPMedia
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+            }
+       }
+      ```
 
      
      
