@@ -25,10 +25,10 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     let audioPlayer = STKAudioPlayer()
     var timer: Timer = Timer()
     var canPlay: Bool = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imageBg = UIImageView(frame: self.view.bounds)
         imageBg.backgroundColor = UIColor.black
         imageBg.contentMode = .scaleAspectFill
@@ -97,12 +97,12 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
             make.centerX.equalTo(self.view)
         }
         
-        let circleLineView = CircleLineView(frame: CGRect(x: 0 , y: 0, width: self.view.frame.width*2/3, height: self.view.frame.width*2/3))
+        let circleLineView = CircleLineView(frame: CGRect(x: self.view.frame.width*1/6 , y: 0, width: self.view.frame.width*2/3, height: self.view.frame.width*2/3))
         self.view.addSubview(circleLineView)
-//        circleLineView.snp.makeConstraints{make->Void in
-//            make.centerY.equalTo(self.view).offset(-220)
-//            make.centerX.equalTo(self.view)
-//        }
+        circleLineView.snp.makeConstraints{make->Void in
+            make.centerY.equalTo(self.view).offset(-220)
+            make.left.equalTo(self.view.frame.width*1/6)
+        }
         circleLineView.startAnimation()
         
         
@@ -124,8 +124,6 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
             make.centerY.equalTo(self.progressView!.center)
             make.centerX.equalTo(self.progressView!)
         }
-        
-      
         
     }
     
@@ -269,6 +267,8 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
         let seconds = audioPlayer.duration
         showPlayTime(Int(seconds))
         playButton.setImage(UIImage(named: "play_pause_btn")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        setupRemoteTransportControls()
+        setupNowPlaying()
     }
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, didFinishBufferingSourceWithQueueItemId queueItemId: NSObject) {
@@ -286,5 +286,38 @@ class PlayController: UIViewController, MusicDownLoadProtocol, STKAudioPlayerDel
     
     func audioPlayer(_ audioPlayer: STKAudioPlayer, unexpectedError errorCode: STKAudioPlayerErrorCode) {
         
+    }
+    
+    func setupRemoteTransportControls() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.addTarget { event  in
+            if self.audioPlayer.state == .paused {
+                self.audioPlayer.resume()
+                return .success
+            }
+            
+            return .commandFailed
+        }
+        
+        commandCenter.pauseCommand.addTarget { event  in
+            if self.audioPlayer.state == .playing {
+                self.audioPlayer.pause()
+                return .success
+            }
+            return .commandFailed
+        }
+    }
+    
+    func setupNowPlaying() {
+        var nowPlayingInfo = [String: Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = musicItems![index].title
+        if let image = ImageCache.default.retrieveImageInMemoryCache(forKey: musicItems![index].thumb_url ?? "")  {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size) { size in
+                return image
+            }
+            nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = audioPlayer.duration
+            //nowPlayingInfo[MPMediaPlaylist] = MPMedia
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+        }
     }
 }

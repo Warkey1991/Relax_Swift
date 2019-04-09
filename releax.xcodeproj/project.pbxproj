@@ -40,15 +40,17 @@
 		1967BC2921D4B38800E0199C /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC2721D4B38800E0199C /* HttpTools.swift */; };
 		1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */; };
 		1967BC3421D4B3ED00E0199C /* JsonConvertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */; };
-		1967BC4D21D4CDFB00E0199C /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4821D4CDFA00E0199C /* 4.png */; };
-		1967BC4F21D4CDFB00E0199C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4A21D4CDFA00E0199C /* 5.png */; };
 		1967BC5121D4CDFB00E0199C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1967BC4C21D4CDFA00E0199C /* 3.png */; };
-		1989E26E21DC90CE005E8256 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1989E26C21DC90CE005E8256 /* 1.png */; };
-		1989E26F21DC90CE005E8256 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1989E26D21DC90CE005E8256 /* 2.png */; };
 		1989E27221DE0F2D005E8256 /* VipAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27121DE0F2D005E8256 /* VipAlertView.swift */; };
 		1989E27621DE2CAB005E8256 /* UIAlertController+Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27521DE2CAB005E8256 /* UIAlertController+Dialog.swift */; };
 		1989E27A21DF15E1005E8256 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27921DF15E1005E8256 /* PremiumViewController.swift */; };
 		1989E27C21DF1666005E8256 /* VipAlertOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E27B21DF1666005E8256 /* VipAlertOperationProtocol.swift */; };
+		1989E28521E32B54005E8256 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1989E28421E32B54005E8256 /* MessageUI.framework */; };
+		1989E29621E49539005E8256 /* BottomPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E29521E49539005E8256 /* BottomPopVC.swift */; };
+		1989E29821E497F5005E8256 /* PresentBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E29721E497F5005E8256 /* PresentBottom.swift */; };
+		1989E29B21E49BA8005E8256 /* SongCellViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E29921E49BA8005E8256 /* SongCellViewTableViewCell.swift */; };
+		1989E29C21E49BA8005E8256 /* SongCellViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1989E29A21E49BA8005E8256 /* SongCellViewTableViewCell.xib */; };
+		1989E2A021E4C2F4005E8256 /* CircleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989E29F21E4C2F4005E8256 /* CircleLineView.swift */; };
 		19DFFB7821D609BA001BDEBD /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7721D609BA001BDEBD /* CourseItem.swift */; };
 		19DFFB7A21D60BBD001BDEBD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7921D60BBD001BDEBD /* Course.swift */; };
 		19DFFB7C21D60C33001BDEBD /* CourseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFFB7B21D60C33001BDEBD /* CourseResult.swift */; };
@@ -121,15 +123,17 @@
 		1967BC3221D4B3ED00E0199C /* JsonConvertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonConvertModel.swift; sourceTree = "<group>"; };
 		1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "releax-Bridging-Header.h"; sourceTree = "<group>"; };
 		1967BC3D21D4C01A00E0199C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1967BC4821D4CDFA00E0199C /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		1967BC4A21D4CDFA00E0199C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		1967BC4C21D4CDFA00E0199C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		1989E26C21DC90CE005E8256 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../../Desktop/1.png; sourceTree = "<group>"; };
-		1989E26D21DC90CE005E8256 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Desktop/2.png; sourceTree = "<group>"; };
 		1989E27121DE0F2D005E8256 /* VipAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipAlertView.swift; sourceTree = "<group>"; };
 		1989E27521DE2CAB005E8256 /* UIAlertController+Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Dialog.swift"; sourceTree = "<group>"; };
 		1989E27921DF15E1005E8256 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		1989E27B21DF1666005E8256 /* VipAlertOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipAlertOperationProtocol.swift; sourceTree = "<group>"; };
+		1989E28421E32B54005E8256 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1989E29521E49539005E8256 /* BottomPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopVC.swift; sourceTree = "<group>"; };
+		1989E29721E497F5005E8256 /* PresentBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentBottom.swift; sourceTree = "<group>"; };
+		1989E29921E49BA8005E8256 /* SongCellViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellViewTableViewCell.swift; sourceTree = "<group>"; };
+		1989E29A21E49BA8005E8256 /* SongCellViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCellViewTableViewCell.xib; sourceTree = "<group>"; };
+		1989E29F21E4C2F4005E8256 /* CircleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLineView.swift; sourceTree = "<group>"; };
 		19DFFB7721D609BA001BDEBD /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
 		19DFFB7921D60BBD001BDEBD /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		19DFFB7B21D60C33001BDEBD /* CourseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResult.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1989E28521E32B54005E8256 /* MessageUI.framework in Frameworks */,
 				B9E6500946DBB11C84F80199 /* libPods-releax.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +215,6 @@
 				1937EED821D0CA480061772E /* resource */,
 				1937EEC521CB78260061772E /* views */,
 				1937EEBB21CB48780061772E /* modules */,
-				1937EEB821CB48110061772E /* base */,
 				1937EE8821CB45740061772E /* AppDelegate.swift */,
 				1967BC3C21D4B57D00E0199C /* releax-Bridging-Header.h */,
 				1937EE8E21CB45740061772E /* Main.storyboard */,
@@ -244,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				1937EEB921CB48230061772E /* RootTabBarController.swift */,
+				1989E29721E497F5005E8256 /* PresentBottom.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -251,6 +256,8 @@
 		1937EEBB21CB48780061772E /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				1989E28621E481E3005E8256 /* play */,
+				1937EEB821CB48110061772E /* base */,
 				1937EEBE21CB48A90061772E /* sit */,
 				1937EEBD21CB489F0061772E /* setting */,
 				1937EEBC21CB487E0061772E /* home */,
@@ -266,7 +273,6 @@
 				1937EEBF21CB48D00061772E /* HomeController.swift */,
 				1937EECA21CC8A3D0061772E /* SelectorProtocol.swift */,
 				1967BC3021D4B3ED00E0199C /* MusicDownLoadProtocol.swift */,
-				1937EECC21CC9BEB0061772E /* PlayController.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				1937EED621D091240061772E /* SettingPremiumView.swift */,
 				19DFFB8421D6390A001BDEBD /* MoveView.swift */,
 				1989E27521DE2CAB005E8256 /* UIAlertController+Dialog.swift */,
+				1989E29F21E4C2F4005E8256 /* CircleLineView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -310,11 +317,7 @@
 		1937EED821D0CA480061772E /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				1989E26C21DC90CE005E8256 /* 1.png */,
-				1989E26D21DC90CE005E8256 /* 2.png */,
 				1967BC4C21D4CDFA00E0199C /* 3.png */,
-				1967BC4821D4CDFA00E0199C /* 4.png */,
-				1967BC4A21D4CDFA00E0199C /* 5.png */,
 				19EFFE3821D4EB770065539A /* course.json */,
 				19EFFE3721D4EB770065539A /* sample.json */,
 				1937EEDA21D0CB340061772E /* mobutils_mediation_init_config.json */,
@@ -354,6 +357,17 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		1989E28621E481E3005E8256 /* play */ = {
+			isa = PBXGroup;
+			children = (
+				1937EECC21CC9BEB0061772E /* PlayController.swift */,
+				1989E29521E49539005E8256 /* BottomPopVC.swift */,
+				1989E29921E49BA8005E8256 /* SongCellViewTableViewCell.swift */,
+				1989E29A21E49BA8005E8256 /* SongCellViewTableViewCell.xib */,
+			);
+			path = play;
+			sourceTree = "<group>";
+		};
 		19C025CF21D0EA7700004883 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +401,7 @@
 		38FB7954A455D7005CACE9BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1989E28421E32B54005E8256 /* MessageUI.framework */,
 				5EDF100C001A035B5AD75C59 /* libPods-releax.a */,
 			);
 			name = Frameworks;
@@ -462,6 +477,11 @@
 					1937EE8421CB45740061772E = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					1937EE9A21CB45750061772E = {
 						CreatedOnToolsVersion = 10.1;
@@ -500,20 +520,17 @@
 			files = (
 				1967BC5121D4CDFB00E0199C /* 3.png in Resources */,
 				19EFFE3A21D4EB770065539A /* course.json in Resources */,
-				1989E26F21DC90CE005E8256 /* 2.png in Resources */,
-				1967BC4D21D4CDFB00E0199C /* 4.png in Resources */,
+				1989E29C21E49BA8005E8256 /* SongCellViewTableViewCell.xib in Resources */,
 				1937EEE321D0CB340061772E /* sleep_music_course_list.json in Resources */,
 				1937EEE221D0CB340061772E /* tab_home_default_source.json in Resources */,
 				19EFFE3921D4EB770065539A /* sample.json in Resources */,
 				1937EE9521CB45750061772E /* LaunchScreen.storyboard in Resources */,
 				1937EE9221CB45750061772E /* Assets.xcassets in Resources */,
 				1937EEE121D0CB340061772E /* sleep_music_wake_up.json in Resources */,
-				1989E26E21DC90CE005E8256 /* 1.png in Resources */,
 				1937EE9021CB45740061772E /* Main.storyboard in Resources */,
 				1937EEDF21D0CB340061772E /* sleep_music_natural.json in Resources */,
 				1937EEE021D0CB340061772E /* mobutils_mediation_init_config.json in Resources */,
 				1948040821D0F4C300A3D6D4 /* MusicCollectionViewCell.xib in Resources */,
-				1967BC4F21D4CDFB00E0199C /* 5.png in Resources */,
 				1937EEE421D0CB340061772E /* sleep_series_default.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +588,7 @@
 				1967BC3321D4B3ED00E0199C /* MusicDownLoadProtocol.swift in Sources */,
 				1937EEE721D0CDCA0061772E /* Music.swift in Sources */,
 				1948040721D0F4C300A3D6D4 /* MusicCollectionViewCell.swift in Sources */,
+				1989E29B21E49BA8005E8256 /* SongCellViewTableViewCell.swift in Sources */,
 				19DFFB7E21D60C99001BDEBD /* Result.swift in Sources */,
 				1937EEC921CB9F930061772E /* ItemUnitView.swift in Sources */,
 				1989E27221DE0F2D005E8256 /* VipAlertView.swift in Sources */,
@@ -583,7 +601,9 @@
 				1937EE8921CB45740061772E /* AppDelegate.swift in Sources */,
 				19419E3521D0F9E200452A4E /* CollectionReusableView.swift in Sources */,
 				19DFFB8021D60D29001BDEBD /* JsonConvertCourseModel.swift in Sources */,
+				1989E29621E49539005E8256 /* BottomPopVC.swift in Sources */,
 				1937EECB21CC8A3D0061772E /* SelectorProtocol.swift in Sources */,
+				1989E2A021E4C2F4005E8256 /* CircleLineView.swift in Sources */,
 				1937EEC721CB78980061772E /* FunctionController.swift in Sources */,
 				1937EEE921D0CDEB0061772E /* MusicItem.swift in Sources */,
 				1937EECF21CCD2F50061772E /* LaunchController.swift in Sources */,
@@ -596,6 +616,7 @@
 				19DFFB7C21D60C33001BDEBD /* CourseResult.swift in Sources */,
 				19DFFB7821D609BA001BDEBD /* CourseItem.swift in Sources */,
 				19DFFB7A21D60BBD001BDEBD /* Course.swift in Sources */,
+				1989E29821E497F5005E8256 /* PresentBottom.swift in Sources */,
 				19DFFB8721D766B6001BDEBD /* CoursePlayControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

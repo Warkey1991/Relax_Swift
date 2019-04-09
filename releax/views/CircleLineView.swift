@@ -36,7 +36,7 @@ class CircleLineView: UIView {
          */
         let radius = self.frame.width / 2
         let y = self.frame.origin.y + radius
-        let mainPath = UIBezierPath(arcCenter: CGPoint(x: radius + 30, y:  radius + 110), radius: radius, startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let mainPath = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2, y: self.frame.height / 2), radius: self.frame.height / 2, startAngle: -(CGFloat.pi  / 2), endAngle: CGFloat.pi * 3 / 2, clockwise: true)
         circleLineLayer = CAShapeLayer()
         circleLineLayer?.path = mainPath.cgPath
         circleLineLayer?.lineWidth = 1
@@ -47,7 +47,7 @@ class CircleLineView: UIView {
     }
     
     public func startAnimation() {
-        let scaleAnn = createScaleAnimation(keyPath: "transform.scale", toValue: 1.2)
+        let scaleAnn = createScaleAnimation(keyPath: "transform.scale", toValue: 1.3)
         let alphaAnn = createAlphaAnimation()
 
         let group = CAAnimationGroup()

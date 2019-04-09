@@ -50,7 +50,7 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
         tableView.register(UINib(nibName: "MusicCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "music_Cell")
         // 注册一个headView
         tableView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header_view")
-
+        
         view.addSubview(tableView)
         
         let topBarView = UIView(frame: CGRect(x: 0, y: 30, width: view.frame.width, height: 60))
@@ -179,6 +179,7 @@ class HomeController: UIViewController,  UICollectionViewDelegate, UICollectionV
             return CGSize.init(width: 400, height: 60)
         }
     }
+    
     
     //添加headerView 的布局
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

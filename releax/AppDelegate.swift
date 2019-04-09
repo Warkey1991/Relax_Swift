@@ -7,14 +7,25 @@
 //
 
 import UIKit
-
+import AVFoundation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        // 注册后台播放
+        let session = AVAudioSession.sharedInstance()
+        do {
+            if #available(iOS 10.0, *) {
+                try session.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [])
+            } else {
+                // Fallback on earlier versions
+            }
+            try session.setActive(true)
+        } catch {
+            //print(error)
+        }
         UIApplication.shared.statusBarStyle = .lightContent
         let root  = RootTabBarController()
         self.window?.rootViewController = root
