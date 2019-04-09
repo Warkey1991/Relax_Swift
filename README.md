@@ -728,7 +728,7 @@
         ```
         
 19. **控制后台播放音频**
-      先要开启后台播放的功能，然后添加一下代码，
+      先要开启后台播放的功能，然后添加以下代码，
       ```Swift
         func setupRemoteTransportControls() {
             let commandCenter = MPRemoteCommandCenter.shared()
